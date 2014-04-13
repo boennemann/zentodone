@@ -1,0 +1,9 @@
+{
+  "name": "zentodone",
+  "version": "0.0.0",
+  "dependencies": {
+    "bradypodion": "0.5.1",
+    "angular-loading-bar": "~0.3.0",
+    "fontawesome": "~4.0.3"
+  }
+}

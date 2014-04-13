@@ -1,0 +1,23 @@
+# ignore dependencies
+app/bower_components/
+node_modules/
+
+# ignore generated files
+dist/
+.tmp/
+build/
+
+# logs
+*.log
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
