@@ -1,5 +1,4 @@
-'use strict'
-angular.module('ztd', ['bp', 'angular-loading-bar'])
+angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
     bpAppProvider.setConfig({
