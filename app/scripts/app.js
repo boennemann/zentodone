@@ -15,4 +15,12 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage']
         templateUrl: 'views/inbox.html',
         controller: 'InboxCtrl'
       })
+      .state('mit', {
+        url: '/mit',
+        templateUrl: 'views/mit.html',
+        controller: 'MitCtrl',
+        data: {
+          title: 'Most Important Tasks'
+        }
+      })
   })

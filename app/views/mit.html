@@ -1,0 +1,22 @@
+<bp-table bp-scroll bp-scroll-sticky>
+  <bp-table-header ng-repeat-start="day in mit track by $index">{{ day[0].dueDate | date : 'EEEE' }}</bp-table-header>
+  <bp-cell  task-cell
+            ng-repeat-end
+            ng-repeat="task in day track by task.id"
+            ui-sref="task({id:task.id})"
+            swipe-right="convertToBr(task)"
+            swipe-left="convertToMit(task)"
+            swipe-long-right="setDeleted(task)"
+            swipe-long-left="setDone(task)">
+    <div class="content">
+      <div class="title">{{ task.title }} <em ng-if="task.overdue">{{ task.overdue }}</em></div>
+      <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>
+      <div class="description" ng-if="task.description">{{ task.description }}</div>
+    </div>
+  </bp-cell>
+</bp-table>
+<bp-tabbar class="mit">
+  <bp-tab ui-sref="mit" bp-tab-icon="fa-list-ol" bp-tab-title="MITs"></bp-tab>
+  <bp-tab ui-sref="inbox" bp-tab-icon="fa-inbox"></bp-tab>
+  <bp-tab ui-sref="br" bp-tab-icon="fa-calendar"></bp-tab>
+</bp-tabbar>
