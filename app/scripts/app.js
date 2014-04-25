@@ -23,4 +23,12 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage']
           title: 'Most Important Tasks'
         }
       })
+      .state('br', {
+        url: '/br',
+        templateUrl: 'views/br.html',
+        controller: 'BrCtrl',
+        data: {
+          title: 'Big Rocks'
+        }
+      })
   })
