@@ -12,6 +12,7 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage']
     $stateProvider
       .state('inbox', {
         url: '/inbox',
-        templateUrl: 'views/inbox.html'
+        templateUrl: 'views/inbox.html',
+        controller: 'InboxCtrl'
       })
   })

@@ -1,5 +1,31 @@
-<bp-table>
-  <bp-cell>
-  Task
+<bp-table bp-scroll bp-scroll-sticky>
+
+  <form ng-submit="newTask()" name="taskInput">
+    <bp-cell>
+      <input type="text" ng-model="taskTitle" placeholder="Tell me about your goals">
+    </bp-cell>
+  </form>
+
+  <bp-table-header>Tasks</bp-table-header>
+
+  <bp-cell  task-cell
+            ng-repeat="task in inbox track by task.id"
+            ui-sref="task({id:task.id})"
+            swipe-right="convertToBr(task)"
+            swipe-left="convertToMit(task)"
+            swipe-long-right="setDeleted(task)"
+            swipe-long-left="setDone(task)">
+    <div class="content">
+      <div class="title">{{ task.title }}</div>
+      <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>
+      <div class="description" ng-if="task.description">{{ task.description }}</div>
+    </div>
   </bp-cell>
+
 </bp-table>
+
+<bp-tabbar>
+  <bp-tab ui-sref="mit" bp-tab-icon="fa-list-ol" bp-tab-title="MITs"></bp-tab>
+  <bp-tab ui-sref="inbox" bp-tab-icon="fa-inbox"></bp-tab>
+  <bp-tab ui-sref="br" bp-tab-icon="fa-calendar"></bp-tab>
+</bp-tabbar>
