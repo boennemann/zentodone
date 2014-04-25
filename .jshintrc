@@ -22,6 +22,7 @@
   "browser": true,
   "globals": {
     "angular": true,
+    "Hammer": true,
     "IScroll": true,
     "IScrollSticky": true
   }
