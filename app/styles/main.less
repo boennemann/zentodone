@@ -10,7 +10,62 @@
 @fa-font-path: '../bower_components/fontawesome/fonts';
 @bp-icon-font-app: FontAwesome;
 
+@mit-color: #E7A048;
+@br-color: #347093;
+@inbox-color: #8e00ab;
+@do-color: #33A269;
+@delete-color: #E76E48;
+
 // User Styles
-@android-highlight-color: #009a02;
-@ios-highlight-color: #009a02;
+@android-highlight-color: @inbox-color;
+@ios-highlight-color: @inbox-color;
 @android-navbar-app-icon: url(../favicon.ico);
+
+@import "directives/taskcell";
+
+bp-cell.textarea {
+  height: auto;
+  -webkit-box-flex: 1;
+  textarea {
+    width: 100%;
+    border: none;
+    height: auto;
+    resize: none;
+    display: block;
+    padding: 0;
+    margin: 20px 0;
+  }
+}
+
+bp-action.bp-icon {
+  color: darkgray !important;
+  &.@{tap-active}, &.active {
+    &.mit {
+      color: #E7A048 !important;
+    }
+    &.br {
+      color: #347093 !important;
+    }
+    &.inbox {
+      color: #8e00ab !important;
+    }
+    &.do {
+      color: #33A269 !important;
+    }
+    &.delete {
+      color: #E76E48 !important;
+    }
+  }
+}
+
+.mit bp-tab {
+  .bp-ios-tab-theme(@ios-tab-color, @mit-color);
+}
+
+.br bp-tab {
+  .bp-ios-tab-theme(@ios-tab-color, @br-color);
+}
+
+bp-table-header {
+  z-index: 99999;
+}
