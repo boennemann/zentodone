@@ -1,0 +1,14 @@
+<bp-navbar ng-hide="true">
+  <bp-action ng-click class="bp-icon mit fa-list-ol">Convert to most important tasks</bp-action>
+  <bp-action ng-click class="bp-icon br fa-calendar">Convert to big rock</bp-action>
+  <bp-action ng-click class="bp-icon inbox active fa-inbox">Inbox</bp-action>
+  <bp-action ng-click class="bp-icon do fa-check">Done</bp-action>
+  <bp-action ng-click class="bp-icon delete fa-times">Delete</bp-action>
+</bp-navbar>
+
+<bp-table ng-controller="TaskCtrl">
+  <form>
+    <bp-cell><input type="text" ng-model="task.title"></bp-cell>
+    <bp-cell class="textarea"><textarea ng-model="task.description"></textarea></bp-cell>
+  </form>
+</bp-table>

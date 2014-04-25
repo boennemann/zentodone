@@ -31,4 +31,13 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage']
           title: 'Big Rocks'
         }
       })
+      .state('task', {
+        url: '/tasks/:id',
+        templateUrl: 'views/task.html',
+        controller: 'TaskCtrl',
+        data: {
+          up: 'inbox',
+          transition: 'scale'
+        }
+      })
   })
