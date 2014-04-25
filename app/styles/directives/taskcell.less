@@ -1,0 +1,122 @@
+
+bp-table [task-cell] {
+  @task-cell-height: 66px;
+
+  position: relative;
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: darkgray;
+  height: @task-cell-height;
+  .box-shadow(none);
+  .content {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible !important;
+    padding: 0 13px;
+    background: white;
+    .box-shadow(inset 0 1px @ios-cell-border-color);
+  }
+  &:first-child .content{
+    .box-shadow(none);
+  }
+  &.@{tap-active} .content {
+    background-color: @ios-cell-active-color;
+  }
+
+
+  .title {
+    float: left;
+    width: 70%;
+    height: 34px;
+    line-height: 34px;
+    font-weight: bold;
+  }
+
+  time {
+    float: left;
+    width: 30%;
+    display: block;
+    text-align: right;
+    line-height: 34px;
+    height: 34px;
+    font-size: 12px;
+    color: @ios-text-secondary-color;
+  }
+
+  .description {
+    float: left;
+    height: 28px;
+    line-height: 14px;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+
+  &.left, &.right, {
+
+    &.first .content:before, &.second .content:before, &:before {
+      font-family: @bp-icon-font-app;
+      color: white;
+      position: absolute;
+      text-align: center;
+      width: 40px;
+      height: 100%;
+      line-height: @task-cell-height;
+      text-align: center;
+    }
+  }
+
+  &.left {
+    &:before {
+      content: '\f073'; // fa-calendar
+    }
+    &.first, &.second {
+      &:before {
+        display: none;
+      }
+      .content:before {
+        content: '\f073'; // fa-calendar
+        left: -40px;
+      }
+    }
+    &.first {
+      background: #347093;
+    }
+    &.second {
+      background: #E76E48;
+      .content:before {
+        content: '\f00d'; // fa-times
+      }
+    }
+  }
+  &.right {
+    &:before {
+      content: '\f0cb'; // fa-list-ol
+      right: 0;
+    }
+    &.first, &.second {
+      &:before {
+        display: none;
+      }
+      .content:before {
+        content: '\f0cb'; // fa-list-ol
+        right: -40px;
+      }
+    }
+    &.first {
+      background: #E7A048;
+    }
+    &.second {
+      background: #33A269;
+      .content:before {
+        content: '\f00c'; //fa-check
+      }
+    }
+  }
+}
