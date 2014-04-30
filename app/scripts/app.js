@@ -1,4 +1,4 @@
-angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage'])
+angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage', 'hoodie'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
     bpAppProvider.setConfig({
