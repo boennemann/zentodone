@@ -25,9 +25,11 @@ module.exports = (grunt) ->
         files: ['.tmp/styles/main.css']
 
       view:
-        files: ['<%= app.app %>/views/**/*.html']
+        files: ['<%= app.app %>/index.html', '<%= app.app %>/views/**/*.html']
 
       less:
+        options:
+          livereload: off
         files: ['<%= app.app %>/styles/**/*.less']
         tasks: ['less:styles']
 
