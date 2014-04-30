@@ -34,24 +34,23 @@ angular.module('zentodone')
         var onDrag = function(event) {
           $text.css('transform', 'translateX(' + event.gesture.deltaX + 'px)');
 
+          var class1, class2
+
           if (event.gesture.deltaX < 0) {
-            $bg.removeClass('left');
-            $bg.addClass('right');
+            class1 = 'right'
           } else if (event.gesture.deltaX > 0) {
-            $bg.removeClass('right');
-            $bg.addClass('left');
-          } else {
-            $bg.removeClass('right left');
+            class1 = 'left'
           }
+
           if (Math.abs(event.gesture.deltaX) > secondTreshold) {
-            $bg.removeClass('first');
-            $bg.addClass('second');
+            class2 = ' second'
           } else if (Math.abs(event.gesture.deltaX) > firstTreshold) {
-            $bg.removeClass('second');
-            $bg.addClass('first');
-          } else {
-            $bg.removeClass('first second');
+            class2 = ' first'
           }
+
+          $bg
+            .removeClass('right left first second'.replace(class1, '').replace(class2,''))
+            .addClass(class1 + ' ' + class2)
         }
 
         var onDragEnd = function(event) {
