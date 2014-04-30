@@ -1,17 +1,28 @@
 {
   "name": "zentodone",
   "version": "0.0.0",
-  "dependencies": {},
+  "type": "app",
+  "dependencies": {
+    "hoodie-server": "0.9.19",
+    "hoodie-plugin-appconfig": "^0.2.0",
+    "hoodie-plugin-email": "^0.1.1",
+    "hoodie-plugin-users": "^0.1.0",
+    "hoodie-plugin-angularjs": "^0.0.15"
+  },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "^0.4.4",
     "grunt-concurrent": "^0.5.0",
+    "grunt-connect-proxy": "^0.1.10",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-cssmin": "^0.9.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^0.11.0",
+    "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.0",
+    "grunt-hoodie": "^0.3.0",
     "grunt-ngmin": "~0.0.2",
     "grunt-usemin": "^2.1.1",
     "load-grunt-tasks": "^0.4.0",
@@ -20,7 +31,21 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "subdomain": "zentodone",
+  "domains": [
+    "admin.zentodone.jit.su",
+    "couch.zentodone.jit.su"
+  ],
   "scripts": {
+    "start": "node node_modules/hoodie-server/bin/start",
     "test": "grunt test"
+  },
+  "hoodie": {
+    "plugins": [
+      "hoodie-plugin-appconfig",
+      "hoodie-plugin-email",
+      "hoodie-plugin-users",
+      "hoodie-plugin-angularjs"
+    ]
   }
 }

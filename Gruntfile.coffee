@@ -6,7 +6,12 @@ module.exports = (grunt) ->
   grunt.initConfig
     app:
       app: 'app'
-      dist: 'dist'
+      dist: 'www'
+
+    cfg: {}
+
+    hoodie: start: options: callback: (cfg) ->
+      grunt.config.set 'cfg', cfg
 
     watch:
       options:
@@ -20,9 +25,11 @@ module.exports = (grunt) ->
         files: ['.tmp/styles/main.css']
 
       view:
-        files: ['<%= app.app %>/views/**/*.html']
+        files: ['<%= app.app %>/index.html', '<%= app.app %>/views/**/*.html']
 
       less:
+        options:
+          livereload: off
         files: ['<%= app.app %>/styles/**/*.less']
         tasks: ['less:styles']
 
@@ -34,6 +41,16 @@ module.exports = (grunt) ->
         port: 9000
         hostname: '0.0.0.0'
         livereload: 35729
+        middleware: (connect, options) ->
+          unless Array.isArray options.base
+            options.base = [options.base]
+
+          middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest]
+          options.base.forEach (base) -> middlewares.push connect.static base
+          directory = options.directory or options.base[options.base.length - 1]
+          middlewares.push connect.directory directory
+
+          middlewares
 
       livereload:
         options:
@@ -42,6 +59,11 @@ module.exports = (grunt) ->
             '.tmp'
             '<%= app.app %>'
           ]
+        proxies: [
+          context: '/_api'
+          host: '<%= cfg.stack.www.host %>'
+          port: '<%= cfg.stack.www.port %>'
+        ]
 
       dist:
         options:
@@ -51,10 +73,7 @@ module.exports = (grunt) ->
       options:
         jshintrc: '.jshintrc'
 
-      all: [
-        'Gruntfile.js'
-        '<%= app.app %>/scripts/**/*.js'
-      ]
+      all: [ '<%= app.app %>/scripts/**/*.js' ]
 
     clean:
       dist:
@@ -76,7 +95,7 @@ module.exports = (grunt) ->
 
     usemin:
       html: ['<%= app.dist %>/**/*.html']
-      css: ['<%= app.dist %>/styles/**/*.css']
+      css: ['.tmp/styles/**/*.css']
       options:
         assetsDirs: ['<%= app.dist %>']
 
@@ -84,9 +103,9 @@ module.exports = (grunt) ->
       dist:
         files: [
           expand: true
-          cwd: '.tmp/concat/scripts'
-          src: '*.js'
-          dest: '.tmp/concat/scripts'
+          cwd: '<%=app.app%>/scripts'
+          src: '**/*.js'
+          dest: '.tmp/scripts'
         ]
 
     less:
@@ -103,49 +122,38 @@ module.exports = (grunt) ->
             cwd: '<%= app.app %>'
             dest: '<%= app.dist %>'
             src: [
-              '*.{ico,png,txt}'
-              '.htaccess'
-              '*.html'
-              'views/**/*.html'
-              'bower_components/**/*'
-              'images/**/*.{webp}'
-              'fonts/*'
+              'bower_components/fontawesome/fonts/*'
+              'index.html'
+              'views/*.html'
             ]
-          }
-          {
-            expand: true
-            cwd: '.tmp/images'
-            dest: '<%= app.dist %>/images'
-            src: ['generated/*']
           }
         ]
 
     concurrent:
-      server: ['less:styles']
-      dist: ['less:styles']
+      dist: ['less:styles', 'ngmin']
 
-  grunt.registerTask 'serve', (target) ->
-    if target is 'dist'
-      return grunt.task.run([
-        'build'
-        'connect:dist:keepalive'
-      ])
-    grunt.task.run [
-      'clean:server'
-      'concurrent:server'
-      'connect:livereload'
-      'watch'
-    ]
-    return
-
-  grunt.registerTask 'build', [
-    'clean:dist'
-    'useminPrepare'
-    'concurrent:dist'
-    'concat'
-    'ngmin'
-    'copy:dist'
-    'usemin'
+  grunt.registerTask 'serve', [
+    'clean:server'
+    'hoodie'
+    'less:styles'
+    'connect:livereload'
+    'configureProxies:livereload'
+    'watch'
   ]
+
+  grunt.registerTask 'build', ->
+    # TODO: remove "force" hack to work around https://github.com/yeoman/grunt-usemin/issues/291
+    grunt.option 'force', true
+
+    grunt.task.run [
+      'clean'
+      'concurrent'
+      'useminPrepare'
+      'copy'
+      'usemin'
+      'concat'
+      'uglify'
+      'cssmin'
+    ]
+
   grunt.registerTask 'default', ['build']
-  return
