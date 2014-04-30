@@ -6,7 +6,12 @@ module.exports = (grunt) ->
   grunt.initConfig
     app:
       app: 'app'
-      dist: 'dist'
+      dist: 'www'
+
+    cfg: {}
+
+    hoodie: start: options: callback: (cfg) ->
+      grunt.config.set 'cfg', cfg
 
     watch:
       options:
@@ -34,6 +39,16 @@ module.exports = (grunt) ->
         port: 9000
         hostname: '0.0.0.0'
         livereload: 35729
+        middleware: (connect, options) ->
+          unless Array.isArray options.base
+            options.base = [options.base]
+
+          middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest]
+          options.base.forEach (base) -> middlewares.push connect.static base
+          directory = options.directory or options.base[options.base.length - 1]
+          middlewares.push connect.directory directory
+
+          middlewares
 
       livereload:
         options:
@@ -42,6 +57,11 @@ module.exports = (grunt) ->
             '.tmp'
             '<%= app.app %>'
           ]
+        proxies: [
+          context: '/_api'
+          host: '<%= cfg.stack.www.host %>'
+          port: '<%= cfg.stack.www.port %>'
+        ]
 
       dist:
         options:
@@ -132,11 +152,12 @@ module.exports = (grunt) ->
       ])
     grunt.task.run [
       'clean:server'
+      'hoodie'
       'concurrent:server'
       'connect:livereload'
+      'configureProxies:livereload'
       'watch'
     ]
-    return
 
   grunt.registerTask 'build', [
     'clean:dist'
@@ -148,4 +169,3 @@ module.exports = (grunt) ->
     'usemin'
   ]
   grunt.registerTask 'default', ['build']
-  return
