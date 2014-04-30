@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -17,7 +17,7 @@
       <ui-view></ui-view>
     </ui-view-wrapper>
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js scripts/vendor.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/jquery-hammerjs/jquery.hammer.js"></script>
@@ -29,6 +29,8 @@
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/bradypodion/dist/bradypodion.js"></script>
+    <!-- endbuild -->
+    <!-- build:js(.tmp) scripts/app.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/services/tasks.js"></script>
     <script src="scripts/services/task.js"></script>

@@ -71,10 +71,7 @@ module.exports = (grunt) ->
       options:
         jshintrc: '.jshintrc'
 
-      all: [
-        'Gruntfile.js'
-        '<%= app.app %>/scripts/**/*.js'
-      ]
+      all: [ '<%= app.app %>/scripts/**/*.js' ]
 
     clean:
       dist:
@@ -96,7 +93,7 @@ module.exports = (grunt) ->
 
     usemin:
       html: ['<%= app.dist %>/**/*.html']
-      css: ['<%= app.dist %>/styles/**/*.css']
+      css: ['.tmp/styles/**/*.css']
       options:
         assetsDirs: ['<%= app.dist %>']
 
@@ -104,9 +101,9 @@ module.exports = (grunt) ->
       dist:
         files: [
           expand: true
-          cwd: '.tmp/concat/scripts'
-          src: '*.js'
-          dest: '.tmp/concat/scripts'
+          cwd: '<%=app.app%>/scripts'
+          src: '**/*.js'
+          dest: '.tmp/scripts'
         ]
 
     less:
@@ -123,49 +120,38 @@ module.exports = (grunt) ->
             cwd: '<%= app.app %>'
             dest: '<%= app.dist %>'
             src: [
-              '*.{ico,png,txt}'
-              '.htaccess'
-              '*.html'
-              'views/**/*.html'
-              'bower_components/**/*'
-              'images/**/*.{webp}'
-              'fonts/*'
+              'bower_components/fontawesome/fonts/*'
+              'index.html'
+              'views/*.html'
             ]
-          }
-          {
-            expand: true
-            cwd: '.tmp/images'
-            dest: '<%= app.dist %>/images'
-            src: ['generated/*']
           }
         ]
 
     concurrent:
-      server: ['less:styles']
-      dist: ['less:styles']
+      dist: ['less:styles', 'ngmin']
 
-  grunt.registerTask 'serve', (target) ->
-    if target is 'dist'
-      return grunt.task.run([
-        'build'
-        'connect:dist:keepalive'
-      ])
+  grunt.registerTask 'serve', [
+    'clean:server'
+    'hoodie'
+    'less:styles'
+    'connect:livereload'
+    'configureProxies:livereload'
+    'watch'
+  ]
+
+  grunt.registerTask 'build', ->
+    # TODO: remove "force" hack to work around https://github.com/yeoman/grunt-usemin/issues/291
+    grunt.option 'force', true
+
     grunt.task.run [
-      'clean:server'
-      'hoodie'
-      'concurrent:server'
-      'connect:livereload'
-      'configureProxies:livereload'
-      'watch'
+      'clean'
+      'concurrent'
+      'useminPrepare'
+      'copy'
+      'usemin'
+      'concat'
+      'uglify'
+      'cssmin'
     ]
 
-  grunt.registerTask 'build', [
-    'clean:dist'
-    'useminPrepare'
-    'concurrent:dist'
-    'concat'
-    'ngmin'
-    'copy:dist'
-    'usemin'
-  ]
   grunt.registerTask 'default', ['build']
