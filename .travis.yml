@@ -1,13 +1,22 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 before_script:
-  - npm install -g bower grunt-cli
-  - bower install
+- npm install -g bower grunt-cli
+- bower install
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: false
   slack:
-    secure: "F+6jFHuAvA/V5ghMfihdFSRxCFkHdEb1LJU0vAuY7uVTsomGpvzm8KA85aA6tahCa2zIEqL/4tZuweXz98USbT/pK6GQmmtALu4tq+dAJfn9Mh9ziJe09L3X6fWUa+W5tZrBiJBEP9MFUL+MXbAKCdUv9WKfXTUR1aHU8IOOHCQ="
+    secure: F+6jFHuAvA/V5ghMfihdFSRxCFkHdEb1LJU0vAuY7uVTsomGpvzm8KA85aA6tahCa2zIEqL/4tZuweXz98USbT/pK6GQmmtALu4tq+dAJfn9Mh9ziJe09L3X6fWUa+W5tZrBiJBEP9MFUL+MXbAKCdUv9WKfXTUR1aHU8IOOHCQ=
+deploy:
+  provider: nodejitsu
+  skip_cleanup: true
+  user: boennemann
+  api_key:
+    secure: AmDQfQ89Wwzj/6VIvd2UVLmtZLRChRNcuowPXo+SDgeWGJQGkshLrp2bqz+ooLIZ769dqmPNe6zFZtzN2ujZXqvk4b1DPlqsSmC4dj8ViSu/izp/VJPEcrp8ntqn+cVN1WwtZh5jg54yM+jLNCjY/+wi4rwc++wQNmcCKmAEzDY=
+  on:
+    repo: boennemann/zentodone
+    tags: true
