@@ -28,7 +28,7 @@ hoodie start
 
 ## Development
 
-Start Hoodie and serve a development version of the App that with Livereload.
+Start Hoodie and serve a development version of the App with Livereload.
 
 ```
 grunt serve
