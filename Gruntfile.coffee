@@ -156,4 +156,5 @@ module.exports = (grunt) ->
       'cssmin'
     ]
 
+  grunt.registerTask 'test', ['jshint', 'build']
   grunt.registerTask 'default', ['build']

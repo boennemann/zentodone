@@ -1,4 +1,5 @@
 # Zen To Done
+[![Build Status](https://travis-ci.org/boennemann/zentodone.svg)](https://travis-ci.org/boennemann/zentodone)
 [![Bower Dependency Status](https://www.versioneye.com/user/projects/53624813fe0d0724d4000080/badge.png)](https://www.versioneye.com/user/projects/53624813fe0d0724d4000080)
 [![Dependency Status](https://david-dm.org/boennemann/zentodone.svg)](https://david-dm.org/boennemann/zentodone)
 [![devDependency Status](https://david-dm.org/boennemann/zentodone/dev-status.svg)](https://david-dm.org/boennemann/zentodone#info=devDependencies)
