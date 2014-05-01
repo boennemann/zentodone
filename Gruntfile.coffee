@@ -141,20 +141,19 @@ module.exports = (grunt) ->
     'watch'
   ]
 
-  grunt.registerTask 'build', ->
-    # TODO: remove "force" hack to work around https://github.com/yeoman/grunt-usemin/issues/291
-    grunt.option 'force', true
-
-    grunt.task.run [
-      'clean'
-      'concurrent'
-      'useminPrepare'
-      'copy'
-      'usemin'
-      'concat'
-      'uglify'
-      'cssmin'
-    ]
+  # TODO: remove "continueOn" hack to work around https://github.com/yeoman/grunt-usemin/issues/291
+  grunt.registerTask 'build', [
+    'clean'
+    'concurrent'
+    'continueOn'
+    'useminPrepare'
+    'continueOff'
+    'copy'
+    'usemin'
+    'concat'
+    'uglify'
+    'cssmin'
+  ]
 
   grunt.registerTask 'test', ['jshint', 'build']
   grunt.registerTask 'default', ['build']
