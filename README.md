@@ -1,4 +1,7 @@
 # Zen To Done
+[![Bower Dependency Status](https://www.versioneye.com/user/projects/53624813fe0d0724d4000080/badge.png)](https://www.versioneye.com/user/projects/53624813fe0d0724d4000080)
+[![Dependency Status](https://david-dm.org/boennemann/zentodone.svg)](https://david-dm.org/boennemann/zentodone)
+[![devDependency Status](https://david-dm.org/boennemann/zentodone/dev-status.svg)](https://david-dm.org/boennemann/zentodone#info=devDependencies)
 
 A ToDo App based on [Leo Babauta's](http://leobabauta.com/) [Ultimate Simple Productivity System](http://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/).
 Built with [Bradypodion.js](http://bradypodion.io), [AngularJS](http://angularjs.org) and [Hoodie](http://hood.ie).
