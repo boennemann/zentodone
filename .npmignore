@@ -1,0 +1,9 @@
+.tmp
+app
+data
+.bowerrc
+.editorconfig
+.gitattributes
+.jshintrc
+bower.json
+Gruntfile.coffee
