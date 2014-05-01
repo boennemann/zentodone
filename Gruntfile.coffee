@@ -132,6 +132,20 @@ module.exports = (grunt) ->
     concurrent:
       dist: ['less:styles', 'ngmin']
 
+    bump: options:
+      commitMessage: 'chore(release): v%VERSION%'
+      files: ['package.json', 'bower.json']
+      commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
+      pushTo: 'origin master'
+
+  grunt.registerTask 'release', ->
+    @args.unshift 'bump-only'
+    grunt.task.run [
+      @args.join ':'
+      'changelog'
+      'bump-commit'
+    ]
+
   grunt.registerTask 'serve', [
     'clean:server'
     'hoodie'

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "grunt": "^0.4.4",
+    "grunt-bump": "0.0.13",
     "grunt-concurrent": "^0.5.0",
     "grunt-connect-proxy": "^0.1.10",
     "grunt-continue": "^0.0.1",
@@ -31,6 +32,7 @@
     "grunt-contrib-less": "^0.11.0",
     "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "^0.6.0",
+    "grunt-conventional-changelog": "^1.1.0",
     "grunt-hoodie": "^0.3.0",
     "grunt-ngmin": "^0.0.2",
     "grunt-usemin": "^2.1.1",
