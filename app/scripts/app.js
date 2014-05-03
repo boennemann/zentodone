@@ -49,3 +49,11 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage',
         }
       })
   })
+  .run(function($rootScope, $state, hoodie) {
+    $rootScope.$on('$stateChangeStart', function(event, to) {
+      if (!hoodie.account.hasAccount() && to.name !== 'account') {
+        event.preventDefault()
+        $state.go('account')
+      }
+    })
+  })
