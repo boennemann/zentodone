@@ -22,6 +22,7 @@
 @android-navbar-app-icon: url(../favicon.ico);
 
 @import "directives/taskcell";
+@import "views/account";
 
 bp-cell.textarea {
   height: auto;
@@ -37,7 +38,7 @@ bp-cell.textarea {
   }
 }
 
-bp-action.bp-icon {
+bp-toolbar bp-action.bp-icon {
   color: darkgray !important;
   &.@{tap-active}, &.active {
     &.mit {
