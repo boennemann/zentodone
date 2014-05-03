@@ -19,7 +19,7 @@ module.exports = (grunt) ->
 
       js:
         files: ['<%= app.app %>/scripts/**/*.js']
-        tasks: ['jshint:all']
+        tasks: ['jshint:watch']
 
       styles:
         files: ['.tmp/styles/main.css']
@@ -72,8 +72,8 @@ module.exports = (grunt) ->
     jshint:
       options:
         jshintrc: '.jshintrc'
-
-      all: [ '<%= app.app %>/scripts/**/*.js' ]
+        force: yes
+      watch: [ '<%= app.app %>/scripts/**/*.js' ]
 
     clean:
       dist:
