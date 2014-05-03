@@ -15,6 +15,14 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage',
         templateUrl: 'views/inbox.html',
         controller: 'InboxCtrl'
       })
+      .state('account', {
+        url: '/inbox/account',
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl',
+        data: {
+          modal: true
+        }
+      })
       .state('mit', {
         url: '/mit',
         templateUrl: 'views/mit.html',
