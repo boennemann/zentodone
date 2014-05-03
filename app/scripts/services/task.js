@@ -1,4 +1,4 @@
-angular.module('zentodone').factory('Task', function () {
+angular.module('zentodone').factory('Task', function ($q, hoodie) {
   // Task types
   var INBOX = 1
   var MIT = 2
@@ -15,7 +15,7 @@ angular.module('zentodone').factory('Task', function () {
       id: Math.random().toString(36).substr(2, 9),
       date: Date.now(),
       dueDate: null,
-      type: INBOX,
+      taskType: INBOX,
       done: false,
       deleted: false,
       title: title,
@@ -34,19 +34,27 @@ angular.module('zentodone').factory('Task', function () {
 
   Task.prototype.setDone = function() {
     this.data.done = true
+    return $q.when(hoodie.store.update('task', this.data.id, {done: true}))
   }
 
   Task.prototype.setDeleted = function() {
     this.data.deleted = true
+    return $q.when(hoodie.store.update('task', this.data.id, {deleted: true}))
   }
 
   Task.prototype.convertTo = function(type) {
-    if (type !== this.data.type && Task.isType(type)) {
-      this.data.type = type
-      this.data.dueDate = null
-      return true
+    if (type !== this.data.taskType && Task.isType(type)) {
+      this.data.taskType = type
+      this.data.dueDate = Date.now()
+      return $q.when(hoodie.store.update('task', this.data.id, {
+        taskType: type,
+        dueDate: this.data.dueDate
+      }))
     }
-    return false
+
+    var deferred = $q.defer()
+    deferred.reject(false)
+    return deferred.promise
   }
 
   return Task
