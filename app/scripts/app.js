@@ -1,4 +1,4 @@
-angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage', 'hoodie'])
+angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
     bpAppProvider.setConfig({
@@ -14,6 +14,14 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage',
         url: '/inbox',
         templateUrl: 'views/inbox.html',
         controller: 'InboxCtrl'
+      })
+      .state('account', {
+        url: '/inbox/account',
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl',
+        data: {
+          modal: true
+        }
       })
       .state('mit', {
         url: '/mit',
@@ -40,4 +48,12 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'angularLocalStorage',
           transition: 'scale'
         }
       })
+  })
+  .run(function($rootScope, $state, hoodie) {
+    $rootScope.$on('$stateChangeStart', function(event, to) {
+      if (!hoodie.account.hasAccount() && to.name !== 'account') {
+        event.preventDefault()
+        $state.go('account')
+      }
+    })
   })

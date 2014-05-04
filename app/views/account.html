@@ -1,0 +1,100 @@
+<bp-navbar-config bp-navbar-no-up>
+  <bp-action ui-sref="inbox" class="bp-icon fa-inbox">
+    Inbox
+  </bp-action>
+</bp-navbar-config>
+
+<bp-table class="bp-table-grouped" ng-if="isSignedIn()">
+  <bp-table>
+    <bp-cell class="bp-cell-value2">
+      <span class="label">
+        E-Mail
+      </span>
+      <span class="value">
+        {{ getCurrentUser() }}
+      </span>
+    </bp-cell>
+    <bp-cell>
+      <bp-action class="bp-button signup" ng-click="signOut()">
+        Sign Out
+      </bp-action>
+    </bp-cell>
+  </bp-table>
+  <bp-table-grouped-footer>
+    You're currently logged in.
+  </bp-table-grouped-footer>
+</bp-table>
+<bp-table class="bp-table-grouped" ng-if="!isSignedIn()">
+  <bp-table>
+    <form name="loginForm" ng-submit="handleForm()">
+      <bp-cell class="bp-cell-value2">
+        <label class="label" for="email">E-Mail</label>
+        <input
+          ng-model="data.email"
+          name="email"
+          class="value"
+          required
+          placeholder="jane@doe.com"
+          type="email">
+        <bp-action
+          class="bp-icon"
+          ng-init="error = loginForm.email.$error"
+          ng-class="{
+           'fa-check green': !error.email && !error.required,
+           'fa-times red': error.email || error.required
+          }">
+        </bp-action>
+      </bp-cell>
+      <bp-cell class="bp-cell-value2">
+        <label class="label" for="password">Password</label>
+        <input
+          ng-model="data.password"
+          name="password"
+          class="value"
+          required
+          placeholder="••••••••"
+          type="password">
+        <bp-action
+          class="bp-icon"
+          ng-class="{
+           'fa-check green': !loginForm.password.$error.required,
+           'fa-times red': loginForm.password.$error.required
+          }">
+        </bp-action>
+      </bp-cell>
+      <bp-cell
+        class="bp-cell-value2"
+        ng-class="{repeat: !hasRepeated()}"
+        ng-if="allowSignUp">
+        <label class="label" for="password2">Repeat</label>
+        <input
+          ng-model="data.password2"
+          name="password2"
+          class="value"
+          placeholder="••••••••"
+          type="password">
+        <bp-action
+          class="bp-icon"
+          ng-init="set = loginForm.password2.$error.required"
+          ng-class="{
+           'fa-check green': hasSamePassword(),
+           'fa-times red': !hasSamePassword()
+          }">
+        </bp-action>
+      </bp-cell>
+      <bp-cell>
+        <bp-action class="bp-button signup">
+          <input type="submit" value="Let's Go">
+        </bp-action>
+      </bp-cell>
+    </form>
+  </bp-table>
+  <bp-table-grouped-footer>
+    <ng-pluralize
+    count="allowSignUp - 0"
+    when="{
+      'other': 'Sign into an existing account or just create a new one.',
+      'one': 'Seems like you\'re new here, so please verify your password. If you just mistyped it correct, but don\'t repeat it.'
+    }"></ng-pluralize>
+  </bp-table-grouped-footer>
+</bp-table>

@@ -1,35 +1,29 @@
-angular.module('zentodone').factory('tasks', function ($rootScope, storage, Task) {
-  storage.bind($rootScope, 'tasksData')
-  if (!$rootScope.tasksData.length) {
-    $rootScope.tasksData = []
-  }
-  var tasksData = $rootScope.tasksData
-
+angular.module('zentodone').factory('tasks', function ($rootScope, hoodie, $q, Task) {
   return {
     get: function(id) {
-      for (var i = 0; i < tasksData.length; i++) {
-        if (tasksData[i].id = id) {
-          return tasksData[i]
-        }
-      }
+      return $q.when(hoodie.store.find('task', id))
     },
     getAll: function(type) {
+      var promise = $q.when(hoodie.store.findAll('task'))
       if (!Task.isType(type)) {
-        return tasksData
+        return promise
       }
 
-      var tasksDataOfType = []
-      for (var i = 0; i < tasksData.length; i++) {
-        if (tasksData[i].type === type) {
-          tasksDataOfType.push(tasksData[i])
+      var deferred = $q.defer()
+      promise.then(function(tasksData) {
+        var tasksDataOfType = []
+        for (var i = 0; i < tasksData.length; i++) {
+          if (tasksData[i].taskType === type) {
+            tasksDataOfType.push(tasksData[i])
+          }
         }
-      }
-      return tasksDataOfType
+        deferred.resolve(tasksDataOfType)
+      })
+      return deferred.promise
     },
     add: function(title, description) {
       var newTask = new Task(title, description)
-      tasksData.push(newTask.data)
-      return newTask.data
+      return $q.when(hoodie.store.add('task', newTask.data))
     }
   }
 })
