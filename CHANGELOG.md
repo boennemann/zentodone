@@ -1,3 +1,23 @@
+<a name="0.0.2"></a>
+### 0.0.2 (2014-05-04)
+
+
+#### Bug Fixes
+
+* **view:** all lowercase filenames ([0eed8d57](http://github.com/boennemann/zentodone/commit/0eed8d5743fd8527ee9c0e121e42f67e61c9ac91))
+
+
+#### Features
+
+* **account:**
+  * redirect to account if not logged in ([7fcbefb8](http://github.com/boennemann/zentodone/commit/7fcbefb828bf915d31eadc5ef3e34c9e77482646))
+  * add styles ([65eecd86](http://github.com/boennemann/zentodone/commit/65eecd865be410b93f9c3f1b09c84bd5fac2ef91))
+  * add view ([8bbc9a44](http://github.com/boennemann/zentodone/commit/8bbc9a4450bde4420cbe5309f3f5f298fd700313))
+  * add controller ([d7f89fb8](http://github.com/boennemann/zentodone/commit/d7f89fb88f6c053520906c3549d40b4192532801))
+  * add state ([cc56d1df](http://github.com/boennemann/zentodone/commit/cc56d1df9b3c03aecc0e5f27c8525648b9f5af24))
+* **task:** hoodify/promisify ([043b8023](http://github.com/boennemann/zentodone/commit/043b802374cce8f1422385eb3402770662d7df0a))
+
+
 <a name="0.0.1"></a>
 ### 0.0.1 (2014-05-02)
 
