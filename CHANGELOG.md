@@ -1,3 +1,12 @@
+<a name="0.0.3-0"></a>
+### 0.0.3-0 (2014-05-05)
+
+
+#### Features
+
+* **manifest:** add generated manifest #offlinefirst ([0f620303](http://github.com/boennemann/zentodone/commit/0f62030375e6aaf468efde8918943b902bef1926))
+
+
 <a name="0.0.2-1"></a>
 ### 0.0.2-1 (2014-05-05)
 
