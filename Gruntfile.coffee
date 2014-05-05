@@ -108,6 +108,21 @@ module.exports = (grunt) ->
       options:
         assetsDirs: ['<%= app.dist %>']
 
+    manifest:
+      generate:
+        options:
+          basePath: '<%= app.dist %>'
+          preferOnline: yes
+          verbose: no
+          cache: ['/_api/_files/hoodie.js']
+        src: [
+          'views/*.html'
+          'scripts/*.js'
+          'styles/*.css'
+          'bower_components/fontawesome/**/*.*'
+        ]
+        dest: '<%= app.dist %>/manifest.appcache'
+
     ngmin:
       dist:
         files: [
@@ -176,6 +191,7 @@ module.exports = (grunt) ->
     'uglify'
     'cssmin'
     'rev'
+    'manifest'
     'usemin'
   ]
 
