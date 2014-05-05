@@ -11,7 +11,7 @@
   },
   "type": "app",
   "dependencies": {
-    "hoodie-server": "0.9.19",
+    "hoodie-server": "^0.9.24",
     "hoodie-plugin-appconfig": "^0.2.0",
     "hoodie-plugin-email": "^0.1.1",
     "hoodie-plugin-users": "^0.1.0",
