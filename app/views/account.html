@@ -37,7 +37,7 @@
           placeholder="jane@doe.com"
           type="email">
         <bp-action
-          class="bp-icon"
+          class="bp-icon fa-fw"
           ng-init="error = loginForm.email.$error"
           ng-class="{
            'fa-check green': !error.email && !error.required,
@@ -55,7 +55,7 @@
           placeholder="••••••••"
           type="password">
         <bp-action
-          class="bp-icon"
+          class="bp-icon fa-fw"
           ng-class="{
            'fa-check green': !loginForm.password.$error.required,
            'fa-times red': loginForm.password.$error.required
@@ -74,7 +74,7 @@
           placeholder="••••••••"
           type="password">
         <bp-action
-          class="bp-icon"
+          class="bp-icon fa-fw"
           ng-init="set = loginForm.password2.$error.required"
           ng-class="{
            'fa-check green': hasSamePassword(),
