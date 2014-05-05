@@ -1,9 +1,18 @@
 angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Task) {
   $scope.inbox = []
-  tasks.getAll(Task.INBOX)
-    .then(function(tasks) {
-      $scope.inbox = tasks
-    })
+
+  function fetchTasks() {
+    tasks.getAll(Task.INBOX)
+      .then(function(tasks) {
+        $scope.inbox = tasks
+      })
+  }
+
+  fetchTasks()
+
+  $scope.$on('taskChange', function() {
+    fetchTasks()
+  })
 
   $scope.newTask = function() {
     var title = $scope.taskTitle.trim()

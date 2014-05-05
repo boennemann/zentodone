@@ -1,4 +1,12 @@
 angular.module('zentodone').factory('tasks', function ($rootScope, hoodie, $q, Task) {
+
+  hoodie.store.on('change:task', function(name, task) {
+    $rootScope.$broadcast('taskChange', {
+      type: name,
+      task: task
+    })
+  })
+
   return {
     get: function(id) {
       return $q.when(hoodie.store.find('task', id))
