@@ -99,7 +99,6 @@ module.exports = (grunt) ->
           src: [
             '<%= app.dist %>/scripts/**/*.js'
             '<%= app.dist %>/styles/**/*.css'
-            '<%= app.dist %>/bower_components/fontawesome/**/*.*'
           ]
 
     usemin:
