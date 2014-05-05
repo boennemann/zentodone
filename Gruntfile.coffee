@@ -93,6 +93,15 @@ module.exports = (grunt) ->
       options:
         dest: '<%= app.dist %>'
 
+    rev:
+      dist:
+        files:
+          src: [
+            '<%= app.dist %>/scripts/**/*.js'
+            '<%= app.dist %>/styles/**/*.css'
+            '<%= app.dist %>/bower_components/fontawesome/**/*.*'
+          ]
+
     usemin:
       html: ['<%= app.dist %>/**/*.html']
       css: ['.tmp/styles/**/*.css']
@@ -163,10 +172,11 @@ module.exports = (grunt) ->
     'useminPrepare'
     'continueOff'
     'copy'
-    'usemin'
     'concat'
     'uglify'
     'cssmin'
+    'rev'
+    'usemin'
   ]
 
   grunt.registerTask 'test', ['jshint', 'build']
