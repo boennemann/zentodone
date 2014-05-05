@@ -1,3 +1,12 @@
+<a name="0.0.3-1"></a>
+### 0.0.3-1 (2014-05-05)
+
+
+#### Bug Fixes
+
+* **account:** fixed with for validation icons ([c2417625](http://github.com/boennemann/zentodone/commit/c2417625416377f8d860e97c7f2d5e15d50774d0))
+
+
 <a name="0.0.3-0"></a>
 ### 0.0.3-0 (2014-05-05)
 
