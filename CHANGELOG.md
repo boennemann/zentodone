@@ -1,3 +1,12 @@
+<a name="0.0.4-1"></a>
+### 0.0.4-1 (2014-05-06)
+
+
+#### Bug Fixes
+
+* **templates:** correct paths ([c7b1952b](http://github.com/boennemann/zentodone/commit/c7b1952b68837893ccede596f6d5cd230f2ab3e4))
+
+
 <a name="0.0.4-0"></a>
 ### 0.0.4-0 (2014-05-05)
 
