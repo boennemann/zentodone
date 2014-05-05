@@ -123,7 +123,8 @@ module.exports = (grunt) ->
 
     ngtemplates:
       zentodone:
-        src: '<%= app.app %>/views/*.html'
+        cwd: '<%= app.app %>'
+        src: 'views/*.html'
         dest: '.tmp/templates.js'
         options:
           htmlmin:
