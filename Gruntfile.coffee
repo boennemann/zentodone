@@ -115,12 +115,27 @@ module.exports = (grunt) ->
           verbose: no
           cache: ['/_api/_files/hoodie.js']
         src: [
-          'views/*.html'
           'scripts/*.js'
           'styles/*.css'
           'bower_components/fontawesome/**/*.*'
         ]
         dest: '<%= app.dist %>/manifest.appcache'
+
+    ngtemplates:
+      zentodone:
+        src: '<%= app.app %>/views/*.html'
+        dest: '.tmp/templates.js'
+        options:
+          htmlmin:
+            collapseBooleanAttributes: on
+            collapseWhitespace: on
+            removeAttributeQuotes: on
+            removeComments: on
+            removeEmptyAttributes: on
+            removeRedundantAttributes: on
+            removeScriptTypeAttributes: on
+            removeStyleLinkTypeAttributes: on
+          usemin: '<%= app.dist %>/scripts/app.js'
 
     ngmin:
       dist:
@@ -147,7 +162,6 @@ module.exports = (grunt) ->
             src: [
               'bower_components/fontawesome/fonts/*'
               'index.html'
-              'views/*.html'
             ]
           }
         ]
@@ -185,6 +199,7 @@ module.exports = (grunt) ->
     'continueOn'
     'useminPrepare'
     'continueOff'
+    'ngtemplates'
     'copy'
     'concat'
     'uglify'
