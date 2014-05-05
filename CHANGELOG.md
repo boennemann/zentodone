@@ -1,3 +1,17 @@
+<a name="0.0.4-0"></a>
+### 0.0.4-0 (2014-05-05)
+
+
+#### Bug Fixes
+
+* **views:** fixed width icons in navbar ([092b390e](http://github.com/boennemann/zentodone/commit/092b390ee118c7900ae140762c31b004bf4fb08e))
+
+
+#### Features
+
+* **hoodie:** react to hoodie events and update (even remote) ([e59fa4cb](http://github.com/boennemann/zentodone/commit/e59fa4cb02df5ef9b21df59827443209dbe84372))
+
+
 <a name="0.0.3-1"></a>
 ### 0.0.3-1 (2014-05-05)
 
