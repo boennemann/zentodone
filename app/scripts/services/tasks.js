@@ -39,7 +39,7 @@ angular.module('zentodone').factory('tasks', function ($rootScope, hoodie, $q, T
       angular.forEach(methods, function(method) {
         scope[method] = function(data) {
           var task = new Task(data)
-          task[method]()
+          return task[method]()
         }
       })
 
@@ -50,7 +50,7 @@ angular.module('zentodone').factory('tasks', function ($rootScope, hoodie, $q, T
         var taskType = Task[conversion.toUpperCase()]
         scope[method] = function(data) {
           var task = new Task(data)
-          task.convertTo(taskType)
+          return task.convertTo(taskType)
         }
       })
     }
