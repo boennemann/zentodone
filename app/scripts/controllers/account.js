@@ -1,4 +1,4 @@
-angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, hoodieAccount) {
+angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, $http, hoodieAccount) {
   var data = $scope.data = {}
   $scope.allowSignUp = false
   $scope.account = hoodieAccount
@@ -43,4 +43,9 @@ angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, 
   $scope.signOut = function() {
     return hoodieAccount.signOut()
   }
+
+  $http.get('package.json')
+    .then(function(res) {
+      $scope.package = res.data
+    })
 })

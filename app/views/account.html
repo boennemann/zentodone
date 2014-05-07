@@ -20,6 +20,34 @@
       </bp-action>
     </bp-cell>
   </bp-table>
+  <bp-table-grouped-header ng-if="package">About</bp-table-grouped-header>
+  <bp-table ng-if="package">
+    <bp-cell class="bp-cell-value2" ng-click>
+      <span class="label">
+        Author
+      </span>
+      <a href="http://boennemann.me" class="value">
+        {{ package.author }}
+      </a>
+    </bp-cell>
+    <bp-cell class="bp-cell-value2" ng-click>
+      <span class="label">
+        Version
+      </span>
+      <a ng-href="https://github.com/boennemann/zentodone/releases/tag/v{{ package.version }}" class="value">
+        {{ package.version }}
+      </a>
+    </bp-cell>
+    <bp-cell class="bp-cell-value2" ng-click>
+      <span class="label">
+        Bugs
+      </span>
+      <a href="{{ package.bugs.url }}"class="value">
+        Issues
+        <bp-action style="display: inline-block" class="bp-icon fa-fw fa-github"></bp-action>
+      </a>
+    </bp-cell>
+  </bp-table>
   <bp-table-grouped-footer>
     You're currently logged in.
   </bp-table-grouped-footer>

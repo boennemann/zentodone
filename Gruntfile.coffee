@@ -115,6 +115,7 @@ module.exports = (grunt) ->
           verbose: no
           cache: ['/_api/_files/hoodie.js']
         src: [
+          'package.json'
           'scripts/*.js'
           'styles/*.css'
           'bower_components/fontawesome/**/*.*'
@@ -155,16 +156,17 @@ module.exports = (grunt) ->
     copy:
       dist:
         files: [
-          {
-            expand: true
-            dot: true
-            cwd: '<%= app.app %>'
-            dest: '<%= app.dist %>'
-            src: [
-              'bower_components/fontawesome/fonts/*'
-              'index.html'
-            ]
-          }
+          expand: true
+          dot: true
+          cwd: '<%= app.app %>'
+          dest: '<%= app.dist %>'
+          src: [
+            'bower_components/fontawesome/fonts/*'
+            '../package.json'
+            'index.html'
+          ]
+        ,
+          '<%= app.dist %>/package.json': 'package.json'
         ]
 
     concurrent:
