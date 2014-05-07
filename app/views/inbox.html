@@ -4,7 +4,7 @@
   </bp-action>
 </bp-navbar-config>
 
-<bp-table bp-scroll bp-scroll-sticky>
+<bp-table bp-scroll bp-scroll-sticky class="inbox">
 
   <form ng-submit="newTask()" name="taskInput">
     <bp-cell>
@@ -15,6 +15,7 @@
   <bp-table-header>Tasks</bp-table-header>
 
   <bp-cell  task-cell
+            class="task-cell-animation"
             ng-repeat="task in inbox track by task.id"
             ui-sref="task({id:task.id})"
             swipe-right="convertToBr(task)"

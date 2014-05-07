@@ -32,6 +32,27 @@ angular.module('zentodone').factory('tasks', function ($rootScope, hoodie, $q, T
     add: function(title, description) {
       var newTask = new Task(title, description)
       return $q.when(hoodie.store.add('task', newTask.data))
+    },
+    extend: function(scope) {
+      var methods = ['setDone', 'setDeleted']
+
+      angular.forEach(methods, function(method) {
+        scope[method] = function(data) {
+          var task = new Task(data)
+          return task[method]()
+        }
+      })
+
+      var conversions = ['inbox', 'mit', 'br']
+
+      angular.forEach(conversions, function(conversion) {
+        var method = 'convertTo' + conversion[0].toUpperCase() + conversion.substring(1)
+        var taskType = Task[conversion.toUpperCase()]
+        scope[method] = function(data) {
+          var task = new Task(data)
+          return task.convertTo(taskType)
+        }
+      })
     }
   }
 })

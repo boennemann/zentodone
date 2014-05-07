@@ -34,12 +34,18 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
 
   Task.prototype.setDone = function() {
     this.data.done = true
-    return $q.when(hoodie.store.update('task', this.data.id, {done: true}))
+    return $q.when(hoodie.store.update('task', this.data.id, {
+      done: true,
+      taskType: ARCHIVE
+    }))
   }
 
   Task.prototype.setDeleted = function() {
     this.data.deleted = true
-    return $q.when(hoodie.store.update('task', this.data.id, {deleted: true}))
+    return $q.when(hoodie.store.update('task', this.data.id, {
+      deleted: true,
+      taskType: ARCHIVE
+    }))
   }
 
   Task.prototype.convertTo = function(type) {

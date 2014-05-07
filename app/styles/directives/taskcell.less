@@ -1,5 +1,4 @@
-
-bp-table [task-cell] {
+[task-cell] {
   @task-cell-height: 66px;
 
   position: relative;
@@ -73,23 +72,45 @@ bp-table [task-cell] {
   }
 
   &.left {
+    &.first, &.second {
+      &:before {
+        display: none;
+      }
+      .content:before {
+        left: -40px;
+      }
+    }
+  }
+  &.right {
     &:before {
-      content: '\f073'; // fa-calendar
+      right: 0;
     }
     &.first, &.second {
       &:before {
         display: none;
       }
       .content:before {
+        right: -40px;
+      }
+    }
+  }
+}
+
+.inbox [task-cell] {
+  &.left {
+    &:before {
+      content: '\f073'; // fa-calendar
+    }
+    &.first, &.second {
+      .content:before {
         content: '\f073'; // fa-calendar
-        left: -40px;
       }
     }
     &.first {
-      background: #347093;
+      background: @br-color;
     }
     &.second {
-      background: #E76E48;
+      background: @delete-color;
       .content:before {
         content: '\f00d'; // fa-times
       }
@@ -98,24 +119,97 @@ bp-table [task-cell] {
   &.right {
     &:before {
       content: '\f0cb'; // fa-list-ol
-      right: 0;
     }
     &.first, &.second {
-      &:before {
-        display: none;
-      }
       .content:before {
         content: '\f0cb'; // fa-list-ol
-        right: -40px;
       }
     }
     &.first {
-      background: #E7A048;
+      background: @mit-color;
     }
     &.second {
-      background: #33A269;
+      background: @do-color;
       .content:before {
         content: '\f00c'; //fa-check
+      }
+    }
+  }
+}
+
+.mit [task-cell] {
+  &.left {
+    &:before {
+      content: '\f01c'; // fa-inbox
+    }
+    &.first, &.second {
+      background: @inbox-color;
+      .content:before {
+        content: '\f01c'; // fa-inbox
+      }
+    }
+    &.second {
+      background: @br-color;
+      .content:before {
+        content: '\f073'; // fa-calendar
+      }
+    }
+  }
+  &.right {
+    &:before {
+      content: '\f00c'; // fa-check
+    }
+    &.first, &.second {
+      .content:before {
+        content: '\f00c'; // fa-check
+      }
+    }
+    &.first {
+      background: @do-color;
+    }
+    &.second {
+      background: @delete-color;
+      .content:before {
+        content: '\f00d'; // fa-times
+      }
+    }
+  }
+}
+
+.br [task-cell] {
+  &.left {
+    &:before {
+      content: '\f00c'; // fa-check
+    }
+    &.first, &.second {
+      .content:before {
+        content: '\f00c'; // fa-check
+      }
+    }
+    &.first {
+      background: @do-color;
+    }
+    &.second {
+      background: @delete-color;
+      .content:before {
+        content: '\f00d'; // fa-times
+      }
+    }
+  }
+  &.right {
+    &:before {
+      content: '\f01c'; // fa-inbox
+    }
+    &.first {
+      background: @inbox-color;
+      .content:before {
+        content: '\f01c'; // fa-inbox
+      }
+    }
+    &.second {
+      background: @mit-color;
+      .content:before {
+        content: '\f0cb'; // fa-list-ol
       }
     }
   }
