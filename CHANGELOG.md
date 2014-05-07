@@ -1,3 +1,21 @@
+<a name="0.0.5-0"></a>
+### 0.0.5-0 (2014-05-08)
+
+
+#### Bug Fixes
+
+* **styles:** disable android styles and dynamic type ([0bc779bc](http://github.com/boennemann/zentodone/commit/0bc779bc843c593ac05d7fc9ba46212779e9e843))
+* **tasks:** return promises ([f2d65317](http://github.com/boennemann/zentodone/commit/f2d6531716dd771b62fb80379fd24754bdb78d13))
+
+
+#### Features
+
+* **taskcell:**
+  * animate actions ([2fb5bfbf](http://github.com/boennemann/zentodone/commit/2fb5bfbfe9d8e4b5a88485931a37130e3989d3e3))
+  * correct action colors and icons for br & mit ([ad27dde9](http://github.com/boennemann/zentodone/commit/ad27dde9e8f30f10ec817e2f8384996aeb45b328))
+  * add staggered enter animation ([7e28fa11](http://github.com/boennemann/zentodone/commit/7e28fa11f68c3e5bb8bcfe02091839050f70cc03))
+
+
 <a name="0.0.4-1"></a>
 ### 0.0.4-1 (2014-05-06)
 
