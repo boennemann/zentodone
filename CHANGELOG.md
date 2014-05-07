@@ -1,3 +1,12 @@
+<a name="0.0.5-1"></a>
+### 0.0.5-1 (2014-05-08)
+
+
+#### Features
+
+* **account:** display information for better debugging and error reports ([119c5eff](http://github.com/boennemann/zentodone/commit/119c5effa36a665565ae771a99107e72c50b3495))
+
+
 <a name="0.0.5-0"></a>
 ### 0.0.5-0 (2014-05-08)
 
