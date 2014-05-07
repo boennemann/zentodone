@@ -5,10 +5,10 @@
             ng-repeat-end
             ng-repeat="task in day track by task.id"
             ui-sref="task({id:task.id})"
-            swipe-right="convertToBr(task)"
-            swipe-left="convertToMit(task)"
+            swipe-right="setDone(task)"
+            swipe-left="convertToInbox(task)"
             swipe-long-right="setDeleted(task)"
-            swipe-long-left="setDone(task)">
+            swipe-long-left="convertToMit(task)">
     <div class="content">
       <div class="title">{{ task.title }} <em ng-if="task.overdue">{{ task.overdue }}</em></div>
       <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>

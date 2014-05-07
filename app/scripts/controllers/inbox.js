@@ -1,5 +1,6 @@
 angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Task) {
   $scope.inbox = []
+  tasks.extend($scope)
 
   function fetchTasks() {
     tasks.getAll(Task.INBOX)
@@ -27,48 +28,5 @@ angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Tas
     $scope.taskInput.$setPristine()
 
     angular.element('input').blur()
-  }
-
-  function removeFromInbox(data) {
-    var index = $scope.inbox.indexOf(data);
-    if (index > -1) {
-      $scope.inbox.splice(index, 1);
-    }
-  }
-
-  $scope.setDeleted = function(data) {
-    var task = new Task(data)
-    task.convertTo(Task.ARCHIVE)
-      .then(function() {
-        return task.setDeleted()
-      })
-      .then(function() {
-        removeFromInbox(data)
-      })
-  }
-
-  $scope.setDone = function(data) {
-    var task = new Task(data)
-    task.convertTo(Task.ARCHIVE)
-      .then(function() {
-        return task.setDone()
-      })
-      .then(function() {
-        removeFromInbox(data)
-      })
-  }
-
-  $scope.convertToMit = function(data) {
-    var task = new Task(data)
-    task.convertTo(Task.MIT).then(function() {
-      removeFromInbox(data)
-    })
-  }
-
-  $scope.convertToBr = function(data) {
-    var task = new Task(data)
-    task.convertTo(Task.BR).then(function() {
-      removeFromInbox(data)
-    })
   }
 })
