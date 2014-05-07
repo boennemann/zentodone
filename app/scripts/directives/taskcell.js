@@ -1,14 +1,9 @@
 angular.module('zentodone')
-  .directive('taskCell', function ($parse) {
+  .directive('taskCell', function () {
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
         var $bg, $text, width, firstTreshold, secondTreshold
-
-        var sL  = $parse(attrs.swipeLeft)
-        var sLL = $parse(attrs.swipeLongLeft)
-        var sR  = $parse(attrs.swipeRight)
-        var sLR = $parse(attrs.swipeLongRight)
 
         var preventDefault = function(event) {
           event.preventDefault();
@@ -54,27 +49,25 @@ angular.module('zentodone')
         }
 
         var onDragEnd = function(event) {
-          scope.$apply(function() {
-            if (event.gesture.deltaX > secondTreshold) {
-              sLR(scope)
-            } else if (-event.gesture.deltaX > secondTreshold) {
-              sLL(scope)
-            } else if (event.gesture.deltaX > firstTreshold) {
-              sR(scope)
-            } else if (-event.gesture.deltaX > firstTreshold) {
-              sL(scope)
-            } else {
-              // TODO: use $animate
-              $text
-                .on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-                  $text.css('transition', '')
-                })
-                .css({
-                  transition: 'all 0.2s cubic-bezier(0.50, 0.000, 0.50, 1.50)',
-                  transform: ''
-                })
-            }
-          });
+          if (event.gesture.deltaX > secondTreshold) {
+            scope.$apply(attrs.swipeLongRight)
+          } else if (-event.gesture.deltaX > secondTreshold) {
+            scope.$apply(attrs.swipeLongLeft)
+          } else if (event.gesture.deltaX > firstTreshold) {
+            scope.$apply(attrs.swipeRight)
+          } else if (-event.gesture.deltaX > firstTreshold) {
+            scope.$apply(attrs.swipeLeft)
+          } else {
+            // TODO: use $animate
+            $text
+              .on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+                $text.css('transition', '')
+              })
+              .css({
+                transition: 'all 0.2s cubic-bezier(0.50, 0.000, 0.50, 1.50)',
+                transform: ''
+              })
+          }
 
           $bg.hammer()
             .off('touchmove', preventDefault)
