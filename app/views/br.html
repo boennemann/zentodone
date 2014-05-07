@@ -1,6 +1,7 @@
 <bp-table bp-scroll bp-scroll-sticky>
   <bp-table-header ng-repeat-start="day in br">{{ day[0].dueDate | date : 'w' }}</bp-table-header>
   <bp-cell  task-cell
+            class="task-cell-animation"
             ng-repeat-end
             ng-repeat="task in day track by task.id"
             ui-sref="task({id:task.id})"

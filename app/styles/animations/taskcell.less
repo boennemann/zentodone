@@ -1,0 +1,16 @@
+.task-cell-animation {
+  &.ng-enter {
+    .transition(100ms ease-in all);
+    .scale(0.6, 1);
+    .opacity(0.8);
+  }
+
+  &.ng-enter-stagger {
+    .transition-delay(20ms)
+  }
+
+  &.ng-enter-active {
+    .scale(1);
+    .opacity(1);
+  }
+}

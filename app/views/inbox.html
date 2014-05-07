@@ -15,6 +15,7 @@
   <bp-table-header>Tasks</bp-table-header>
 
   <bp-cell  task-cell
+            class="task-cell-animation"
             ng-repeat="task in inbox track by task.id"
             ui-sref="task({id:task.id})"
             swipe-right="convertToBr(task)"
