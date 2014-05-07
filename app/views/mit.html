@@ -1,4 +1,4 @@
-<bp-table bp-scroll bp-scroll-sticky>
+<bp-table bp-scroll bp-scroll-sticky class="mit">
   <bp-table-header ng-repeat-start="day in mit track by $index">{{ day[0].dueDate | date : 'EEEE' }}</bp-table-header>
   <bp-cell  task-cell
             class="task-cell-animation"
