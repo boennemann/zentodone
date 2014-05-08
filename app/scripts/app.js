@@ -42,17 +42,26 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie'])
       .state('inboxTask', {
         url: '/inbox/:id',
         templateUrl: 'views/task.html',
-        controller: 'TaskCtrl'
+        controller: 'TaskCtrl',
+        data: {
+          taskType: 1
+        }
       })
       .state('mitTask', {
         url: '/mit/:id',
         templateUrl: 'views/task.html',
-        controller: 'TaskCtrl'
+        controller: 'TaskCtrl',
+        data: {
+          taskType: 2
+        }
       })
       .state('brTask', {
         url: '/br/:id',
         templateUrl: 'views/task.html',
-        controller: 'TaskCtrl'
+        controller: 'TaskCtrl',
+        data: {
+          taskType: 3
+        }
       })
   })
   .run(function($rootScope, $state, $q, $window, hoodie) {

@@ -27,6 +27,7 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   Task.MIT = MIT
   Task.BR = BR
   Task.ARCHIVE = ARCHIVE
+  Task.types = [,'inbox','mit','br','archive']
 
   Task.isType = function(type) {
     return type === INBOX || type === MIT || type ===  BR || type === ARCHIVE
