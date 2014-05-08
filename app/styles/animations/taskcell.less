@@ -1,12 +1,12 @@
 .task-cell-animation {
   &.ng-enter {
-    .transition(100ms ease-in all);
+    .transition(200ms ease-in all);
     .scale(0.6, 1);
     .opacity(0.8);
   }
 
   &.ng-enter-stagger {
-    .transition-delay(20ms)
+    .transition-delay(30ms)
   }
 
   &.ng-enter-active {
@@ -15,18 +15,20 @@
   }
 
   &.ng-leave {
-    .transition(100ms ease-out all 10ms);
+    .transition(200ms ease-out all 30ms);
     height: 66px;
+    opacity: 1;
   }
 
   &.ng-leave-active {
     height: 0;
+    opacity: 0;
   }
 }
 
 .task-cell-inner-back {
   &.task-cell-inner-back-add {
-    .transition(150ms cubic-bezier(0.50, 0.000, 0.50, 1.50) all);
+    .transition(200ms cubic-bezier(0.50, 0.000, 0.50, 1.50) all);
   }
   &.task-cell-inner-back-add-active {
     .transform(~'translateX(0) !important');
@@ -36,7 +38,7 @@
 .task-cell-inner-right {
   .transform(~'translateX(120%) !important');
   &.task-cell-inner-right-add {
-    .transition(150ms ease-out all);
+    .transition(200ms ease-out all);
   }
 
   &.task-cell-inner-right-add-active {
@@ -47,7 +49,7 @@
 .task-cell-inner-left {
   .transform(~'translateX(-120%) !important');
   &.task-cell-inner-left-add {
-    .transition(150ms ease-out all);
+    .transition(200ms ease-out all);
   }
 
   &.task-cell-inner-left-add-active {
