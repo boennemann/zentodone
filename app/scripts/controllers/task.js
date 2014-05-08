@@ -10,6 +10,7 @@ angular.module('zentodone')
         goToCorrectType(data)
         $scope.task = data
         lastType = $scope.task.taskType
+        $scope[Task.types[lastType]] = true
       })
 
     tasks.extend($scope)
