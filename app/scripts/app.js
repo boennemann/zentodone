@@ -49,11 +49,23 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie'])
         }
       })
   })
-  .run(function($rootScope, $state, hoodie) {
+  .run(function($rootScope, $state, $q, $window, hoodie) {
     $rootScope.$on('$stateChangeStart', function(event, to) {
       if (!hoodie.account.hasAccount() && to.name !== 'account') {
         event.preventDefault()
         $state.go('account')
       }
+    })
+
+    var defer = $q.defer()
+    var cache = $window.applicationCache
+    cache.addEventListener('updateready', defer.resolve)
+
+    if (cache.status === cache.UPDATEREADY) {
+      defer.resolve()
+    }
+
+    defer.promise.then(function() {
+      $window.location.reload()
     })
   })
