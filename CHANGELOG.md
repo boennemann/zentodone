@@ -1,3 +1,21 @@
+<a name="0.0.5-2"></a>
+### 0.0.5-2 (2014-05-08)
+
+
+#### Bug Fixes
+
+* **taskcell:** slower animations are better on the eye ([35026103](http://github.com/boennemann/zentodone/commit/35026103beb8a6e83a46ba9b56856c08a2436f8e))
+
+
+#### Features
+
+* **appcache:** automatically load new app version ([ed6620a0](http://github.com/boennemann/zentodone/commit/ed6620a000c493ceda878a7ef39aa0f48bc1f418))
+* **task:**
+  * apply task specific styles ([cbb26190](http://github.com/boennemann/zentodone/commit/cbb26190d59a4e1e143e7c12fdb3690e17263404))
+  * add actions to toolbar and handle state afterwards ([65d4fc2f](http://github.com/boennemann/zentodone/commit/65d4fc2fc906eb83028cbf98d39a58ab96e23d04))
+  * type specific task screens ([5cae260c](http://github.com/boennemann/zentodone/commit/5cae260cc1e6092dd1c323980a2925a5796bed49))
+
+
 <a name="0.0.5-1"></a>
 ### 0.0.5-1 (2014-05-08)
 
