@@ -39,14 +39,20 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie'])
           title: 'Big Rocks'
         }
       })
-      .state('task', {
-        url: '/tasks/:id',
+      .state('inboxTask', {
+        url: '/inbox/:id',
         templateUrl: 'views/task.html',
-        controller: 'TaskCtrl',
-        data: {
-          up: 'inbox',
-          transition: 'scale'
-        }
+        controller: 'TaskCtrl'
+      })
+      .state('mitTask', {
+        url: '/mit/:id',
+        templateUrl: 'views/task.html',
+        controller: 'TaskCtrl'
+      })
+      .state('brTask', {
+        url: '/br/:id',
+        templateUrl: 'views/task.html',
+        controller: 'TaskCtrl'
       })
   })
   .run(function($rootScope, $state, $q, $window, hoodie) {

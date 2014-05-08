@@ -17,7 +17,7 @@
   <bp-cell  task-cell
             class="task-cell-animation"
             ng-repeat="task in inbox track by task.id"
-            ui-sref="task({id:task.id})"
+            ui-sref="inboxTask({id:task.id})"
             swipe-right="convertToBr(task)"
             swipe-left="convertToMit(task)"
             swipe-long-right="setDeleted(task)"

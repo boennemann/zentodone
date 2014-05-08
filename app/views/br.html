@@ -4,7 +4,7 @@
             class="task-cell-animation"
             ng-repeat-end
             ng-repeat="task in day track by task.id"
-            ui-sref="task({id:task.id})"
+            ui-sref="brTask({id:task.id})"
             swipe-right="setDone(task)"
             swipe-left="convertToInbox(task)"
             swipe-long-right="setDeleted(task)"
