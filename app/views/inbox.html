@@ -14,14 +14,15 @@
 
   <bp-table-header>Tasks</bp-table-header>
 
-  <bp-cell  task-cell
-            class="task-cell-animation"
-            ng-repeat="task in inbox track by task.id"
-            ui-sref="inboxTask({id:task.id})"
-            swipe-right="convertToBr(task)"
-            swipe-left="convertToMit(task)"
-            swipe-long-right="setDeleted(task)"
-            swipe-long-left="setDone(task)">
+  <bp-cell
+    task-cell
+    class="task-cell-animation"
+    ng-repeat="task in inbox track by task.id"
+    ui-sref="inboxTask({id:task.id})"
+    swipe-right="convertToBr(task)"
+    swipe-left="convertToMit(task)"
+    swipe-long-right="setDeleted(task)"
+    swipe-long-left="setDone(task)">
     <div class="content">
       <div class="title">{{ task.title }}</div>
       <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>

@@ -1,22 +1,24 @@
 <bp-table bp-scroll bp-scroll-sticky class="mit">
-  <bp-table-header ng-repeat-start="day in mit track by $index"
-                   ng-pluralize
-                   count="day.offset"
-                   when="{
-                    '0': 'Today',
-                    'one': 'Tomorrow',
-                    'other': &quot;{{ day[0].dueDate | date : 'EEEE' }}&quot;
-                   }">
+  <bp-table-header
+    ng-repeat-start="day in mit track by $index"
+    ng-pluralize
+    count="day.offset"
+    when="{
+    '0': 'Today',
+    'one': 'Tomorrow',
+    'other': &quot;{{ day[0].dueDate | date : 'EEEE' }}&quot;
+    }">
   </bp-table-header>
-  <bp-cell  task-cell
-            class="task-cell-animation"
-            ng-repeat-end
-            ng-repeat="task in day track by task.id"
-            ui-sref="mitTask({id:task.id})"
-            swipe-left="setDone(task)"
-            swipe-right="convertToInbox(task)"
-            swipe-long-left="setDeleted(task)"
-            swipe-long-right="convertToBr(task)">
+  <bp-cell
+    task-cell
+    class="task-cell-animation"
+    ng-repeat-end
+    ng-repeat="task in day track by task.id"
+    ui-sref="mitTask({id:task.id})"
+    swipe-left="setDone(task)"
+    swipe-right="convertToInbox(task)"
+    swipe-long-left="setDeleted(task)"
+    swipe-long-right="convertToBr(task)">
     <div class="content">
       <div class="title">{{ task.title }} <em ng-if="task.overdue">{{ task.overdue }}</em></div>
       <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>
