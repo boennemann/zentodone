@@ -49,6 +49,8 @@ angular.module('zentodone').service('sortTasks', function ($filter) {
         currentUnit = sortedTasks[unitOffset] = []
       }
 
+      currentUnit.offset = unitOffset
+
       // Its not allowed to have more than 3 Tasks per unit
       if (currentUnit.length > 2) {
         reschedule(currentTask)
@@ -76,6 +78,7 @@ angular.module('zentodone').service('sortTasks', function ($filter) {
 
       var taskToAssign = rescheduledTasks[j]
       taskToAssign.dueDate = today.getTime() + (unitIndex * unit)
+      unitToFill.offset = unitIndex
       unitToFill.push(taskToAssign)
     }
 

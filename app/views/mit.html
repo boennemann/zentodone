@@ -1,5 +1,13 @@
 <bp-table bp-scroll bp-scroll-sticky class="mit">
-  <bp-table-header ng-repeat-start="day in mit track by $index">{{ day[0].dueDate | date : 'EEEE' }}</bp-table-header>
+  <bp-table-header ng-repeat-start="day in mit track by $index"
+                   ng-pluralize
+                   count="day.offset"
+                   when="{
+                    '0': 'Today',
+                    'one': 'Tomorrow',
+                    'other': &quot;{{ day[0].dueDate | date : 'EEEE' }}&quot;
+                   }">
+  </bp-table-header>
   <bp-cell  task-cell
             class="task-cell-animation"
             ng-repeat-end

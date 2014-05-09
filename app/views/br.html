@@ -1,5 +1,13 @@
 <bp-table bp-scroll bp-scroll-sticky class="br">
-  <bp-table-header ng-repeat-start="day in br track by $index">{{ day[0].dueDate | date : 'w' }}</bp-table-header>
+  <bp-table-header ng-repeat-start="day in br track by $index"
+                   ng-pluralize
+                   count="day.offset"
+                   when="{
+                     '0': 'This week',
+                     'one': 'Next week',
+                     'other': &quot;Calendar Week {{ day[0].dueDate | date : 'w' }}&quot;
+                   }">
+  </bp-table-header>
   <bp-cell  task-cell
             class="task-cell-animation"
             ng-repeat-end
