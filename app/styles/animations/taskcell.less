@@ -1,28 +1,28 @@
 .task-cell-animation {
   &.ng-enter {
     .transition(200ms ease-in all);
-    .scale(0.6, 1);
-    .opacity(0.8);
+    height: 0;
+    .opacity(0);
   }
 
   &.ng-enter-stagger {
-    .transition-delay(30ms)
+    .transition-delay(200ms)
   }
 
   &.ng-enter-active {
-    .scale(1);
+    height: 66px;
     .opacity(1);
   }
 
   &.ng-leave {
     .transition(200ms ease-out all 30ms);
     height: 66px;
-    opacity: 1;
+    .opacity(1);
   }
 
   &.ng-leave-active {
     height: 0;
-    opacity: 0;
+    .opacity(0);
   }
 }
 
