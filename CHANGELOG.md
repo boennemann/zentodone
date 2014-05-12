@@ -1,3 +1,17 @@
+<a name="0.0.5-3"></a>
+### 0.0.5-3 (2014-05-12)
+
+
+#### Bug Fixes
+
+* **taskcell:** subtler enter animation ([46475ea4](http://github.com/boennemann/zentodone/commit/46475ea4b88f0bab658e81cd6cbefcf5e169b674))
+
+
+#### Features
+
+* meaningful table grouped headers ([10936f43](http://github.com/boennemann/zentodone/commit/10936f43bd5da358d03e137cde02fef6bb45d016))
+
+
 <a name="0.0.5-2"></a>
 ### 0.0.5-2 (2014-05-08)
 
