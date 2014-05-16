@@ -26,7 +26,5 @@ angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Tas
 
     $scope.taskTitle = ''
     $scope.taskInput.$setPristine()
-
-    angular.element('input').blur()
   }
 })
