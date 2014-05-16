@@ -1,3 +1,24 @@
+<a name="0.0.6-0"></a>
+### 0.0.6-0 (2014-05-16)
+
+
+#### Bug Fixes
+
+* **inbox:**
+  * don't fail in empty input ([302f16b7](http://github.com/boennemann/zentodone/commit/302f16b75b8c686e8ba937251f1cbe7e840a574e))
+  * add new task on blur ([b4fdb501](http://github.com/boennemann/zentodone/commit/b4fdb501da7baa6a0ab2f05930765545ab3c1044), closes [#11](http://github.com/boennemann/zentodone/issues/11))
+* **taskcell:**
+  * reset styles after animation ([aa882aef](http://github.com/boennemann/zentodone/commit/aa882aef1d964270bd64940392f839c2c28ef174))
+  * done tasks aren't swipeable ([43a53aa6](http://github.com/boennemann/zentodone/commit/43a53aa66262fa69b622b1c778dee96df926bc8b))
+
+
+#### Features
+
+* **sorttasks:** archive done tasks from the day before ([16f1e207](http://github.com/boennemann/zentodone/commit/16f1e207149e2b292965e8342c2094f5ae365fc9))
+* **task:** don't archive done tasks of the current unit ([4cfd125d](http://github.com/boennemann/zentodone/commit/4cfd125ddad58227c9170d0fa1933f229634b631))
+* **taskcell:** style for done task ([9d8edfb5](http://github.com/boennemann/zentodone/commit/9d8edfb5ad3c263f022948afcf5a69f1521b2ec0))
+
+
 <a name="0.0.5-3"></a>
 ### 0.0.5-3 (2014-05-12)
 
