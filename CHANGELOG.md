@@ -1,3 +1,14 @@
+<a name="0.0.6-1"></a>
+### 0.0.6-1 (2014-05-16)
+
+
+#### Features
+
+* **logo:**
+  * attribution ([0e922bc2](http://github.com/boennemann/zentodone/commit/0e922bc29808fa40b3aed5a9a82d4154c28f248e))
+  * add logo, favicon, tile whatevs ([01988a15](http://github.com/boennemann/zentodone/commit/01988a1507b61c4a68f0e136459956eba3e4f4a8))
+
+
 <a name="0.0.6-0"></a>
 ### 0.0.6-0 (2014-05-16)
 
