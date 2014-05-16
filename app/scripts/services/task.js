@@ -7,6 +7,12 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   var ONE_DAY = 24*60*60*1000
   var ONE_WEEK = 7*24*60*60*1000
 
+  function unitsOff(date, unit) {
+    var today = new Date()
+    date = new Date(date)
+    return Math.round((date.getTime() - today.getTime())/(unit))
+  }
+
   function Task(title, description) {
     if (angular.isObject(title)) {
       this.data = title
@@ -38,15 +44,29 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   }
 
   Task.prototype.setDone = function() {
-    this.data.done = true
+    var data = this.data
+    var taskType = data.taskType
+
+    switch (this.data.taskType) {
+      case MIT:
+        if (unitsOff(data.dueDate, ONE_DAY) !== 0) {
+          taskType = ARCHIVE
+        }
+        break;
+      case BR:
+        if (unitsOff(data.dueDate, ONE_WEEK) !== 0) {
+          taskType = ARCHIVE
+        }
+        break;
+    }
+
     return $q.when(hoodie.store.update('task', this.data.id, {
       done: true,
-      taskType: ARCHIVE
+      taskType: taskType
     }))
   }
 
   Task.prototype.setDeleted = function() {
-    this.data.deleted = true
     return $q.when(hoodie.store.update('task', this.data.id, {
       deleted: true,
       taskType: ARCHIVE
@@ -55,12 +75,11 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
 
   Task.prototype.convertTo = function(type) {
     if (type !== this.data.taskType && Task.isType(type)) {
-      this.data.taskType = type
-      this.data.dueDate = Date.now()
-      return $q.when(hoodie.store.update('task', this.data.id, {
-        taskType: type,
-        dueDate: this.data.dueDate
-      }))
+      var changes = {taskType: type}
+      if (type === MIT || type === BR) {
+        changes.dueDate = Date.now()
+      }
+      return $q.when(hoodie.store.update('task', this.data.id, changes))
     }
 
     var deferred = $q.defer()
