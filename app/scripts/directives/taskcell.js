@@ -3,6 +3,10 @@ angular.module('zentodone')
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
+        if (scope.task.done) {
+          return
+        }
+
         var $bg, $text, width, firstTreshold, secondTreshold
 
         var preventDefault = function(event) {
