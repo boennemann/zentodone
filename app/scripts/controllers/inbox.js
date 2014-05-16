@@ -16,13 +16,11 @@ angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Tas
   })
 
   $scope.newTask = function() {
-    var title = $scope.taskTitle.trim()
+    var title = ($scope.taskTitle || '').trim()
 
     if (!title) return
 
-    tasks.add(title).then(function(data) {
-      $scope.inbox.push(data)
-    })
+    tasks.add(title)
 
     $scope.taskTitle = ''
     $scope.taskInput.$setPristine()
