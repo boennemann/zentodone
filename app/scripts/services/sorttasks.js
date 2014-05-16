@@ -1,8 +1,8 @@
-angular.module('zentodone').service('sortTasks', function ($filter) {
+angular.module('zentodone').service('sortTasks', function ($filter, Task) {
   return function(collection, unit) {
-    var sortedTasks = [];
-    var rescheduledTasks = [];
-    var today = new Date();
+    var sortedTasks = []
+    var rescheduledTasks = []
+    var today = new Date()
 
     function unitsOff(date) {
       date = new Date(date)
@@ -32,6 +32,13 @@ angular.module('zentodone').service('sortTasks', function ($filter) {
 
       // Overdue tasks are inherited for this unit with highest priority
       if (unitOffset < 0) {
+
+        // Archive done tasks
+        if (currentTask.done) {
+          (new Task(currentTask)).convertTo(Task.ARCHIVE)
+          continue;
+        }
+
         var overdue = Math.abs(unitOffset)
         currentTask.dueDate += (overdue * unit)
 
