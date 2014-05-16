@@ -163,6 +163,7 @@ module.exports = (grunt) ->
           src: [
             'bower_components/fontawesome/fonts/*'
             '../package.json'
+            '*.{png,ico,xml}'
             'index.html'
           ]
         ,
