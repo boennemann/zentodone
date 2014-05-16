@@ -4,6 +4,8 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   var MIT = 2
   var BR = 3
   var ARCHIVE = 4
+  var ONE_DAY = 24*60*60*1000
+  var ONE_WEEK = 7*24*60*60*1000
 
   function Task(title, description) {
     if (angular.isObject(title)) {
@@ -27,6 +29,8 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   Task.MIT = MIT
   Task.BR = BR
   Task.ARCHIVE = ARCHIVE
+  Task.ONE_DAY = ONE_DAY
+  Task.ONE_WEEK = ONE_WEEK
   Task.types = [,'inbox','mit','br','archive']
 
   Task.isType = function(type) {
