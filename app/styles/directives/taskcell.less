@@ -27,7 +27,12 @@
   &.@{tap-active} .content {
     background-color: @ios-cell-active-color;
   }
-
+  &.done {
+    opacity: 0.5;
+    .title, .description {
+      text-decoration: line-through;
+    }
+  }
 
   .title {
     float: left;

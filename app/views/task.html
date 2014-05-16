@@ -1,6 +1,7 @@
 <bp-navbar-config bp-navbar-title="" ng-class="{mit: mit, br: br}"></bp-navbar-config>
 
-<bp-navbar ng-hide="true">
+<!-- ng-hide is a hack https://github.com/excellenteasy/bradypodion/issues/92 -->
+<bp-navbar ng-hide="true" ng-if="!task.done">
   <bp-action
     ng-class="{active: mit}"
     ng-click="handle(convertToMit(task))"

@@ -12,6 +12,7 @@
   <bp-cell
     task-cell
     class="task-cell-animation"
+    ng-class="{done: task.done}"
     ng-repeat-end
     ng-repeat="task in day track by task.id"
     ui-sref="brTask({id:task.id})"
