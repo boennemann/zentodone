@@ -21,7 +21,7 @@ exports.config = {
       browser.params.browser = caps.get('browserName')
     })
 
-    browser.get('http://127.0.0.1:6001/')
+    browser.get('/')
   },
 
   jasmineNodeOpts: {
