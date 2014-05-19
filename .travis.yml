@@ -7,6 +7,10 @@ before_script:
 cache:
   directories:
   - node_modules
+env:
+  global:
+  - SAUCE_USERNAME=zentodone
+  - secure: eSj7fV8Kn/irs8eN3cXaNXsNBzxAXzdzr9gh1K317LF1a/GlEL3OjjRQoWVUeqEBfyPfxKrzfrS3dKpU51Gotg4zKrcXpFKwIYnhfKsKNVWOoVz5jl8HoMMy/BM5MGTyfAm24Xx9FRlj6d0agw59TE44UehwUeYjFbHiSb3ojHE=
 notifications:
   email: false
   slack:
@@ -20,3 +24,8 @@ deploy:
   on:
     repo: boennemann/zentodone
     tags: true
+addons:
+  sauce_connect:
+    username: zentodone
+    access_key:
+      secure: Nt1qAd1PZmTI2oQ6YbYvXkDiJFQeo73x0hwNiKHTfxhC6EmWSO23CAA/dU2NtkW+kKRurNbq9hayO9rJf+K7y85dfhFrEjmp0acKdQkAZR5G0dm8aF5xJnRkFgDIBEmgXr5+O1bcDka4/7j+dlZv+clBNOSAH4BLlUzdsK6M6gk=

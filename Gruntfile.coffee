@@ -179,6 +179,12 @@ module.exports = (grunt) ->
       commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
       pushTo: 'origin master'
 
+    protractor:
+      options:
+        keepAlive: no
+        configFile: 'protractor.travis.conf.js'
+      test: {}
+
   grunt.registerTask 'release', ->
     @args.unshift 'bump-only'
     grunt.task.run [
@@ -213,5 +219,10 @@ module.exports = (grunt) ->
     'usemin'
   ]
 
-  grunt.registerTask 'test', ['jshint', 'build']
+  grunt.registerTask 'e2e', [
+    'hoodie'
+    'protractor'
+  ]
+
+  grunt.registerTask 'test', ['jshint', 'build', 'e2e']
   grunt.registerTask 'default', ['build']
