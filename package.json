@@ -53,7 +53,7 @@
     "couch.zentodone.jit.su"
   ],
   "scripts": {
-    "install": "node node_modules/protractor/bin/webdriver-manager update",
+    "webdriver-update": "node node_modules/protractor/bin/webdriver-manager update",
     "start": "node node_modules/hoodie-server/bin/start",
     "test": "grunt test"
   },
