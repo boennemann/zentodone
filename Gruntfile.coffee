@@ -72,7 +72,6 @@ module.exports = (grunt) ->
     jshint:
       options:
         jshintrc: '.jshintrc'
-        force: yes
       watch: [ '<%= app.app %>/scripts/**/*.js' ]
 
     clean:
