@@ -21,6 +21,7 @@
   "loopfunc": true,
   "browser": true,
   "globals": {
+    "addToHomescreen": true,
     "angular": true,
     "Hammer": true,
     "IScroll": true,

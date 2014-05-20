@@ -2,6 +2,11 @@ angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Tas
   $scope.inbox = []
   tasks.extend($scope)
 
+  // http://cubiq.org/add-to-home-screen
+  addToHomescreen({
+    maxDisplayCount: 3
+  })
+
   function fetchTasks() {
     tasks.getAll(Task.INBOX)
       .then(function(tasks) {
