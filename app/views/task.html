@@ -34,7 +34,20 @@
 
 <bp-table ng-controller="TaskCtrl">
   <form>
-    <bp-cell><input type="text" ng-model="task.title" ng-change="update()"></bp-cell>
-    <bp-cell class="textarea"><textarea ng-model="task.description" ng-change="update()"></textarea></bp-cell>
+    <bp-cell><input
+      type="text"
+      ng-model="task.title"
+      ng-blur="update()"
+      ng-change="update()">
+    </bp-cell>
+    <bp-cell class="textarea">
+      <textarea
+        msd-elastic
+        placeholder="Task description…"
+        ng-model="task.description"
+        ng-blur="update()"
+        ng-change="update()">
+      </textarea>
+    </bp-cell>
   </form>
 </bp-table>

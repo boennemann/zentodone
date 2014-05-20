@@ -1,4 +1,4 @@
-angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie'])
+angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.elastic'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
     bpAppProvider.setConfig({
