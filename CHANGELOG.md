@@ -1,3 +1,12 @@
+<a name="0.0.6-2"></a>
+### 0.0.6-2 (2014-05-20)
+
+
+#### Bug Fixes
+
+* **task:** auto-growing textarea closes #8 ([fbeb20b3](http://github.com/boennemann/zentodone/commit/fbeb20b3f936d677ca5872388218d6419cc2a818))
+
+
 <a name="0.0.6-1"></a>
 ### 0.0.6-1 (2014-05-16)
 
