@@ -21,7 +21,8 @@
     swipe-long-left="setDeleted(task)"
     swipe-long-right="convertToBr(task)">
     <div class="content">
-      <div class="title">{{ task.title }} <em ng-if="task.overdue">{{ task.overdue }}</em></div>
+      <bp-action ng-if="task.overdue" class="bp-icon fa fa-clock-o" aria-label="Overdue"></bp-action>
+      <div class="title">{{ task.title }}</div>
       <time datetime="{{ task.date | date : 'yyyy-MM-dd hh:mm' }}">{{ task.date | date : 'MMM d, h:mm' }}</time>
       <div class="description" ng-if="task.description">{{ task.description }}</div>
     </div>
