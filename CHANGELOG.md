@@ -1,3 +1,20 @@
+<a name="0.0.7-0"></a>
+### 0.0.7-0 (2014-05-22)
+
+
+#### Bug Fixes
+
+* **task:** overdue tasks now stick when marked as done in the current unit ([ce0add4e](http://github.com/boennemann/zentodone/commit/ce0add4eddde419177225c89893da81edee2aee3))
+* **taskcell:** optimize overdue icon for landscape ([e149c91f](http://github.com/boennemann/zentodone/commit/e149c91ff1da8eace18e3653558d1fec4403e7bf))
+
+
+#### Features
+
+* **icons:** use custom built font for filesize ([5708d750](http://github.com/boennemann/zentodone/commit/5708d75098ad16717618f05f46d94e4b432bfdcc))
+* **inbox:** "add to homescreen" popup ([930c0a92](http://github.com/boennemann/zentodone/commit/930c0a928280d58e3e365a2c28aca75a24824434))
+* **taskcell:** improve overdue and done styles ([b9b463cd](http://github.com/boennemann/zentodone/commit/b9b463cd785cf6370aef9a51b1180a5047351a6d))
+
+
 <a name="0.0.6-2"></a>
 ### 0.0.6-2 (2014-05-20)
 

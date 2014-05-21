@@ -1,6 +1,6 @@
 {
   "name": "zentodone",
-  "version": "0.0.6-2",
+  "version": "0.0.7-0",
   "dependencies": {
     "add-to-homescreen": "~3.0.5",
     "angular": "^1.3.0-beta.7",
