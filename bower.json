@@ -9,7 +9,6 @@
     "angular-touch": "^1.3.0-beta.7",
     "bradypodion": "^0.5.1",
     "angular-loading-bar": "^0.3.0",
-    "fontawesome": "^4.0.3",
     "jquery-hammerjs": "^1.0.6"
   },
   "resolutions": {

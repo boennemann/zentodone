@@ -117,7 +117,7 @@ module.exports = (grunt) ->
           'package.json'
           'scripts/*.js'
           'styles/*.css'
-          'bower_components/fontawesome/**/*.*'
+          'fonts/*'
         ]
         dest: '<%= app.dist %>/manifest.appcache'
 
@@ -160,7 +160,7 @@ module.exports = (grunt) ->
           cwd: '<%= app.app %>'
           dest: '<%= app.dist %>'
           src: [
-            'bower_components/fontawesome/fonts/*'
+            'fonts/*'
             '../package.json'
             '*.{png,ico,xml}'
             'index.html'
@@ -208,8 +208,8 @@ module.exports = (grunt) ->
     'uglify'
     'cssmin'
     'rev'
-    'manifest'
     'usemin'
+    'manifest'
   ]
 
   grunt.registerTask 'test', ['jshint', 'build']
