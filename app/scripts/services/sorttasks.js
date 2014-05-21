@@ -36,7 +36,7 @@ angular.module('zentodone').service('sortTasks', function ($filter, Task) {
         // Archive done tasks
         if (currentTask.done) {
           (new Task(currentTask)).convertTo(Task.ARCHIVE)
-          continue;
+          continue
         }
 
         var overdue = Math.abs(unitOffset)

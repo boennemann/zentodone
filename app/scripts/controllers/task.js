@@ -29,7 +29,7 @@ angular.module('zentodone')
 
     $scope.handle = function(promise) {
       promise.then(function(task) {
-        if (task.taskType === Task.ARCHIVE) {
+        if (task.taskType === Task.ARCHIVE || task.done) {
           return goToCollection()
         }
         goToCorrectType(task)

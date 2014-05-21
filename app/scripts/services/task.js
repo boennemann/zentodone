@@ -48,16 +48,16 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
     var taskType = data.taskType
 
     switch (this.data.taskType) {
-      case MIT:
-        if (unitsOff(data.dueDate, ONE_DAY) !== 0) {
-          taskType = ARCHIVE
-        }
-        break;
-      case BR:
-        if (unitsOff(data.dueDate, ONE_WEEK) !== 0) {
-          taskType = ARCHIVE
-        }
-        break;
+    case MIT:
+      if (unitsOff(data.dueDate, ONE_DAY) > 0) {
+        taskType = ARCHIVE
+      }
+      break;
+    case BR:
+      if (unitsOff(data.dueDate, ONE_WEEK) > 0) {
+        taskType = ARCHIVE
+      }
+      break;
     }
 
     return $q.when(hoodie.store.update('task', this.data.id, {
