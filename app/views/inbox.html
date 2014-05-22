@@ -4,17 +4,21 @@
   </bp-action>
 </bp-navbar-config>
 
-<bp-table bp-scroll bp-scroll-sticky class="inbox">
+<form ng-submit="newTask()" name="taskInput">
+  <bp-search>
+    <input
+      type="search"
+      ng-blur="newTask()"
+      ng-model="taskTitle"
+      placeholder=" Enter your task here">
+  </bp-search>
+</form>
 
-  <form ng-submit="newTask()" name="taskInput">
-    <bp-cell>
-      <input
-        type="text"
-        ng-blur="newTask()"
-        ng-model="taskTitle"
-        placeholder="Enter your tasks here…">
-    </bp-cell>
-  </form>
+<bp-table
+  ng-if="inbox.length"
+  bp-scroll
+  bp-scroll-sticky
+  class="inbox">
 
   <bp-table-header>Tasks</bp-table-header>
 

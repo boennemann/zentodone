@@ -1,22 +1,25 @@
-bp-action.bp-icon {
-  display: block;
+[name=loginForm] {
+  bp-action.bp-icon {
+    display: block;
 
-  &.red {
-    color: @delete-color !important;
+    &.red {
+      color: @delete-color !important;
+    }
+
+    &.green {
+      color: @do-color !important;
+    }
   }
 
-  &.green {
-    color: @do-color !important;
+  bp-action.bp-button.signup {
+    width: 100%;
+    input {
+      color: #8e00ab;
+    }
+  }
+
+  .repeat {
+    .opacity(0.5);
   }
 }
 
-bp-action.bp-button.signup {
-  width: 100%;
-  input {
-    color: #8e00ab;
-  }
-}
-
-.repeat {
-  .opacity(0.5);
-}
