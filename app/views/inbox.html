@@ -15,6 +15,15 @@
 </form>
 
 <bp-table
+  class="inbox"
+  bp-scroll
+  ng-if="!inbox.length"
+  ng-controller="ProgressCtrl"
+  src="'views/inbox.zero.html'"
+  ng-include>
+</bp-table>
+
+<bp-table
   ng-if="inbox.length"
   bp-scroll
   bp-scroll-sticky

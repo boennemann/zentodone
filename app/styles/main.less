@@ -20,7 +20,7 @@
 
 // User Styles
 @android: false;
-@ios-dynamic-type: false;
+// @ios-dynamic-type: false;
 @android-highlight-color: @inbox-color;
 @ios-highlight-color: @inbox-color;
 @android-navbar-app-icon: url(../favicon.ico);
@@ -38,7 +38,7 @@ bp-cell input {
   height: 100%;
 }
 
-bp-cell.textarea {
+bp-cell.multiline {
   height: auto;
   -webkit-box-flex: 1;
   textarea {
@@ -49,6 +49,16 @@ bp-cell.textarea {
     display: block;
     padding: 0;
     margin: 20px 0;
+  }
+  > span {
+    margin: 20px 0;
+    white-space: normal;
+    line-height: 24px;
+  }
+  .bp-button {
+    display: inline;
+    height: auto;
+    line-height: inherit;
   }
 }
 
