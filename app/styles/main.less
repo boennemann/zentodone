@@ -55,8 +55,8 @@ bp-cell.multiline {
     white-space: normal;
     line-height: 24px;
   }
-  .bp-button {
-    display: inline;
+  .bp-button, a {
+    display: inline-block;
     height: auto;
     line-height: inherit;
   }
@@ -81,6 +81,16 @@ bp-toolbar bp-action.bp-icon {
       color: #E76E48 !important;
     }
   }
+}
+
+
+
+.bp-button.mit {
+  .bp-ios-button-theme(@mit-color);
+}
+
+.bp-button.br {
+  .bp-ios-button-theme(@br-color);
 }
 
 .mit bp-tab {
