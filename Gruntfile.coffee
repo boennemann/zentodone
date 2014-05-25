@@ -132,7 +132,7 @@ module.exports = (grunt) ->
         options:
           htmlmin:
             collapseBooleanAttributes: on
-            collapseWhitespace: on
+            collapseWhitespace: off
             removeAttributeQuotes: on
             removeComments: on
             removeEmptyAttributes: on
