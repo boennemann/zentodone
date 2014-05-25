@@ -4,7 +4,8 @@
   </bp-action>
 </bp-navbar-config>
 
-<bp-table class="bp-table-grouped" ng-if="isSignedIn()">
+<bp-table bp-scroll class="bp-table-grouped">
+  <span ng-if="isSignedIn()">
   <bp-table>
     <bp-cell class="bp-cell-value2">
       <span class="label">
@@ -20,14 +21,9 @@
       </bp-action>
     </bp-cell>
   </bp-table>
-
-  <bp-table>
-    <bp-cell>
-      <bp-action class="bp-button signup" ng-click="resetProgress()">
-        Reset Tutorial
-      </bp-action>
-    </bp-cell>
-  </bp-table>
+  <bp-table-grouped-footer>
+    You're currently logged in.
+  </bp-table-grouped-footer>
 
   <bp-table-grouped-header ng-if="package">About</bp-table-grouped-header>
   <bp-table ng-if="package">
@@ -49,6 +45,23 @@
     </bp-cell>
     <bp-cell class="bp-cell-value2" ng-click>
       <span class="label">
+        License
+      </span>
+      <a ng-href="https://github.com/boennemann/zentodone/blob/master/LICENSE" class="value">
+        {{ package.license }}
+      </a>
+    </bp-cell>
+    <bp-cell class="bp-cell-value2" ng-click>
+      <span class="label">
+        Repository
+      </span>
+      <a ng-href="{{ package.repository.url }}" class="value">
+        GitHub
+        <bp-action style="display: inline-block" class="bp-icon fa-fw fa-github"></bp-action>
+      </a>
+    </bp-cell>
+    <bp-cell class="bp-cell-value2" ng-click>
+      <span class="label">
         Bugs
       </span>
       <a href="{{ package.bugs.url }}"class="value">
@@ -57,12 +70,16 @@
       </a>
     </bp-cell>
   </bp-table>
-  <bp-table-grouped-footer>
-    You're currently logged in.
-    App Icon Credit: <a href="http://thenounproject.com/term/stones/23987/">Stones</a> by <a href="http://thenounproject.com/grufus/">Grufus</a> <a href="http://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>
-  </bp-table-grouped-footer>
-</bp-table>
-<bp-table class="bp-table-grouped" ng-if="!isSignedIn()">
+
+  <bp-table>
+    <bp-cell>
+      <bp-action class="bp-button signup" ng-click="resetProgress()">
+        Reset Tutorial
+      </bp-action>
+    </bp-cell>
+  </bp-table>
+  </span>
+  <span ng-if="!isSignedIn()">
   <bp-table>
     <form name="loginForm" ng-submit="handleForm()">
       <bp-cell class="bp-cell-value2">
@@ -134,5 +151,45 @@
       'other': 'Sign into an existing account or just create a new one.',
       'one': 'Seems like you\'re new here, so please verify your password. If you just mistyped it correct, but don\'t repeat it.'
     }"></ng-pluralize>
+  </bp-table-grouped-footer>
+  </span>
+
+  <bp-table-grouped-footer>
+    Zen To Done is a mobile web app built with the following Open Source Projects:
+    <br>
+    <a href="http://hood.ie/">Hoodie.js</a> Apache License 2.0
+    <br>
+    <a href="http://angularjs.org/">AngularJS</a> MIT License
+    <br>
+    <a href="http://bradypodion.io/">Bradypodion.js</a> MIT License
+    <br>
+    <a href="http://jquery.com/">jQuery</a> MIT License
+    <br>
+    <a href="http://sizzlejs.com/">Sizzle</a> MIT License
+    <br>
+    <a href="http://eightmedia.github.io/hammer.js/">Hammer.js</a> MIT License
+    <br>
+    <a href="https://chieffancypants.github.io/angular-loading-bar/">angular-loading-bar</a> MIT License
+    <br>
+    <a href="https://angular-ui.github.io/ui-router/">ui-router</a> MIT License
+    <br>
+    <a href="http://lesshat.madebysource.com/">LESShat</a> MIT License
+    <br>
+    <a href="http://cubiq.org/add-to-home-screen">Add to Homescreen</a> MIT License
+    <br>
+    <a href="http://gruntjs.com/">Grunt.js</a> MIT License and <a href="https://github.com/boennemann/zentodone/blob/master/package.json#L21-L43">plugins</a>
+    <br><br>
+    The App Icon is based on <a href="http://thenounproject.com/term/stones/23987/">Stones</a> by <a href="http://thenounproject.com/grufus/">Grufus</a> <a href="http://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>.
+    <br>
+    Other Icons from <a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy.
+    <br><br>
+    This app was sumbitted as a project at my university, which is why I have to put this note up here:
+    <br><br>
+    Zen To Done is my MultiMedia Project 1 for MultiMedia Technology at <a href="http://www.fh-salzburg.ac.at/">Fachhochschule Salzburg GmbH</a>.
+    <br><br>
+    As they dream of getting rich by selling my work – I guess – they made me grant them full usage rights and ancillary copyright.
+    Here are the good news: This app is <a href="https://github.com/boennemann/zentodone/blob/master/LICENSE">MIT licensed</a>, free and open source software, which should balk their plans a little.
+    <br><br>
+    <a href="http://excellenteasy.com/legal/">Legal – Impressum</a>
   </bp-table-grouped-footer>
 </bp-table>
