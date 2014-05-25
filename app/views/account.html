@@ -20,6 +20,15 @@
       </bp-action>
     </bp-cell>
   </bp-table>
+
+  <bp-table>
+    <bp-cell>
+      <bp-action class="bp-button signup" ng-click="resetProgress()">
+        Reset Tutorial
+      </bp-action>
+    </bp-cell>
+  </bp-table>
+
   <bp-table-grouped-header ng-if="package">About</bp-table-grouped-header>
   <bp-table ng-if="package">
     <bp-cell class="bp-cell-value2" ng-click>

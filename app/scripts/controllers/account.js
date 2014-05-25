@@ -1,7 +1,11 @@
-angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, $http, hoodieAccount) {
+angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, $http, hoodie, hoodieAccount) {
   var data = $scope.data = {}
   $scope.allowSignUp = false
   $scope.account = hoodieAccount
+
+  $scope.resetProgress = function() {
+    hoodie.store.removeAll('progress')
+  }
 
   $scope.handleForm = function() {
     if (data.password2) {
