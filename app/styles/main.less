@@ -62,6 +62,23 @@ bp-cell.multiline {
   }
 }
 
+.inboxzero {
+  .bp-flexbox(vertical, center, center);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: darkgray;
+  .bp-icon {
+    display: block;
+    text-align: center;
+    font-size: 74px;
+  }
+  div {
+    line-height: 300%;
+  }
+}
+
 bp-toolbar bp-action.bp-icon {
   color: darkgray !important;
   &.@{tap-active}, &.active {

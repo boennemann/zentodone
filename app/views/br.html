@@ -7,7 +7,11 @@
   ng-include>
 </bp-table>
 
-<bp-table bp-scroll bp-scroll-sticky class="br">
+<bp-table
+  ng-if="br.length"
+  bp-scroll
+  bp-scroll-sticky
+  class="br">
   <bp-table-header
     ng-repeat-start="day in br track by $index"
     ng-pluralize

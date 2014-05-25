@@ -6,7 +6,7 @@ angular.module('zentodone').controller('ProgressCtrl', function ($scope, $q, hoo
     var progress
     $q.when(hoodie.store.find('progress', state))
       .then(function(data) {
-        $scope.instructions = data.count > 0 ? false : true
+        $scope.instructions = data.count > 1 ? false : true
         progress = data
       }, function() {
         $scope.instructions = true
