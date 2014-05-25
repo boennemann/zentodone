@@ -1,3 +1,10 @@
+/*!
+* Zen To Done
+* https://github.com/boennemann/zentodone
+*
+* Copyright 2014 Stephan Bönnemann
+* Released under the MIT license.
+*/
 angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.elastic'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 

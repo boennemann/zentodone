@@ -1,6 +1,7 @@
 {
   "name": "zentodone",
   "version": "0.0.8-0",
+  "license": "MIT",
   "author": "Stephan Bönnemann",
   "repository": {
     "type": "git",
