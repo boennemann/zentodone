@@ -1,3 +1,19 @@
+<a name="0.0.9-0"></a>
+### 0.0.9-0 (2014-05-25)
+
+
+#### Bug Fixes
+
+* **font:** explicitly define font-family ([4408e43e](http://github.com/boennemann/zentodone/commit/4408e43e9cf7faad67b692c796c4d901e4c34dba))
+* **grunt:** don't remove necessary whitespace ([0969ed70](http://github.com/boennemann/zentodone/commit/0969ed7036c13503d53c4db5ad2ee9398091e42c))
+* **taskcell:** scroll works on Android/Chrome ([4f60faf7](http://github.com/boennemann/zentodone/commit/4f60faf7e9013e2eca295c9d1fd625da2842a43f), closes [#16](http://github.com/boennemann/zentodone/issues/16))
+
+
+#### Features
+
+* **account:** attribution and legal stuff ([719b6edc](http://github.com/boennemann/zentodone/commit/719b6edcb3fbb0d67f5757ec4cc2b6a0a1921c6d))
+
+
 <a name="0.0.8-0"></a>
 ### 0.0.8-0 (2014-05-25)
 
