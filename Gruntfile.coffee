@@ -74,6 +74,9 @@ module.exports = (grunt) ->
         jshintrc: '.jshintrc'
       watch: [ '<%= app.app %>/scripts/**/*.js' ]
 
+    uglify: options:
+     preserveComments: 'some'
+
     clean:
       dist:
         files: [
