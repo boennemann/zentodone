@@ -1,3 +1,12 @@
+<bp-table
+  class="br"
+  bp-scroll
+  ng-if="!br.length"
+  ng-controller="ProgressCtrl"
+  src="'views/br.zero.html'"
+  ng-include>
+</bp-table>
+
 <bp-table bp-scroll bp-scroll-sticky class="br">
   <bp-table-header
     ng-repeat-start="day in br track by $index"
@@ -28,6 +37,7 @@
     </div>
   </bp-cell>
 </bp-table>
+
 <bp-tabbar class="br">
   <bp-tab ui-sref="mit" bp-tab-icon="fa-list-ol" bp-tab-title="MITs"></bp-tab>
   <bp-tab ui-sref="inbox" bp-tab-icon="fa-inbox"></bp-tab>
