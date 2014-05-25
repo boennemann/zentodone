@@ -3,17 +3,28 @@ angular.module('zentodone')
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
+
+        var hammerConfig = {
+          drag: true,
+          dragBlockHorizontal: true,
+          dragLockMinDistance: 20,
+          dragLockToAxis: true,
+        }
+
         if (scope.task.done) {
           return
         }
 
-        var $bg, $text, width, firstTreshold, secondTreshold
+        var $bg, $text, width, firstTreshold, secondTreshold, dragging
+        var $scroll = element.parents('[bp-scroll]')
 
         var preventDefault = function(event) {
           event.preventDefault();
         }
 
         var onDragStart = function() {
+          dragging = true
+
           $bg = angular.element(this)
           $text = $bg.children().first()
 
@@ -24,13 +35,14 @@ angular.module('zentodone')
           $text.css('transition', '')
           $bg.removeClass('left right first second')
 
-          $bg.hammer()
+          $bg.hammer(hammerConfig)
             .on('touchmove', preventDefault)
             .on('drag', onDrag)
             .on('dragend', onDragEnd)
         }
 
         var onDrag = function(event) {
+          if (!dragging) return
           $text.css('transform', 'translateX(' + event.gesture.deltaX + 'px)');
 
           var class1, class2
@@ -53,10 +65,12 @@ angular.module('zentodone')
         }
 
         var onDragEnd = function(event) {
-          $bg.hammer()
+          $bg.hammer(hammerConfig)
             .off('touchmove', preventDefault)
             .off('drag', onDrag)
             .off('dragend', onDragEnd)
+
+          if (!dragging) return
 
           var action, move
 
@@ -96,8 +110,15 @@ angular.module('zentodone')
           })
         }
 
-        element.hammer()
+        element.hammer(hammerConfig)
           .on('dragstart', onDragStart)
+
+        $scroll.on('scroll', function() {
+          dragging = false
+
+          if ($text) $text.css('transform', '')
+        })
+
       }
     };
   });
