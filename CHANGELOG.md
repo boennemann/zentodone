@@ -1,3 +1,26 @@
+<a name="0.0.8-0"></a>
+### 0.0.8-0 (2014-05-25)
+
+
+#### Bug Fixes
+
+* **inbox:**
+  * hide done tasks closes #17 ([65192ba8](http://github.com/boennemann/zentodone/commit/65192ba824259358677f76ace12948a9ccf1fb76))
+  * fix input behavior ([87e2feb7](http://github.com/boennemann/zentodone/commit/87e2feb7d85b447603a028a69b05d862fffa49ba))
+  * bigger touch target and clearer message for input ([66dbbfdc](http://github.com/boennemann/zentodone/commit/66dbbfdc95ac8926fb9cf92f3042ac4b1c75268e))
+
+
+#### Features
+
+* empty views ([633ad520](http://github.com/boennemann/zentodone/commit/633ad520b08f50a0f20f09168a7699f99e7e986b))
+* **br:** instructions ([06de2632](http://github.com/boennemann/zentodone/commit/06de2632e05b42a232c4c6264d2237499090461e))
+* **inbox:**
+  * instructions ([35ba6667](http://github.com/boennemann/zentodone/commit/35ba666725f3ddec4aadc0928beefb2a5931e251))
+  * make task input more obvious ([a81b8084](http://github.com/boennemann/zentodone/commit/a81b8084c6ce3b0e816732a60991f248c300d188))
+* **mit:** instructions ([9ebc67c0](http://github.com/boennemann/zentodone/commit/9ebc67c0a9cfbabf09576ec04ce10d7563c08f32))
+* **progress:** track tutorial progress and hide if seen ([4c35815d](http://github.com/boennemann/zentodone/commit/4c35815dec2412aba3e9472b588c21e12f52482c))
+
+
 <a name="0.0.7-0"></a>
 ### 0.0.7-0 (2014-05-22)
 
