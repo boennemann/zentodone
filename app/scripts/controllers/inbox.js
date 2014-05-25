@@ -1,4 +1,4 @@
-angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Task) {
+angular.module('zentodone').controller('InboxCtrl', function ($scope, $filter, tasks, Task) {
   $scope.inbox = []
   tasks.extend($scope)
 
@@ -10,11 +10,8 @@ angular.module('zentodone').controller('InboxCtrl', function ($scope, tasks, Tas
   function fetchTasks() {
     tasks.getAll(Task.INBOX)
       .then(function(tasks) {
-        $scope.inbox = []
-
-        angular.forEach(tasks, function(task) {
-          if (task.done) return
-          $scope.inbox.push(task)
+        $scope.inbox = $filter('filter')(tasks, function(task) {
+          if (!task.done && !task.deleted) return true
         })
       })
   }
