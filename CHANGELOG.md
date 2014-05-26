@@ -1,3 +1,21 @@
+<a name="0.1.0-0"></a>
+### 0.1.0-0 (2014-05-26)
+
+
+#### Bug Fixes
+
+* **account:**
+  * open links in new window ([f972c1ae](http://github.com/boennemann/zentodone/commit/f972c1ae17eaf7af129ba679251b8a4fa53ce53b))
+  * attribute @leobabauta ([c292c2c7](http://github.com/boennemann/zentodone/commit/c292c2c7d055d22edd06a9c992f523ff215735e4))
+* **sorttasks:** save back changed dueDates ([174429e3](http://github.com/boennemann/zentodone/commit/174429e31200b01939736513ad263057fe419537))
+* **task:** bigger textarea by default ([e1640d19](http://github.com/boennemann/zentodone/commit/e1640d19c122d7dd15eac1879be076f7e5c88d7e))
+
+
+#### Features
+
+* **task:** show date information ([ea628a7c](http://github.com/boennemann/zentodone/commit/ea628a7c5de7eceedbb858f8b4486ec7a627dc41))
+
+
 <a name="0.0.9-0"></a>
 ### 0.0.9-0 (2014-05-25)
 
