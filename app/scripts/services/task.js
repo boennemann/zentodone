@@ -1,4 +1,4 @@
-angular.module('zentodone').factory('Task', function ($q, hoodie) {
+angular.module('zentodone').factory('Task', function ($q, $filter, hoodie) {
   // Task types
   var INBOX = 1
   var MIT = 2
@@ -6,12 +6,6 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
   var ARCHIVE = 4
   var ONE_DAY = 24*60*60*1000
   var ONE_WEEK = 7*24*60*60*1000
-
-  function unitsOff(date, unit) {
-    var today = new Date()
-    date = new Date(date)
-    return Math.round((date.getTime() - today.getTime())/(unit))
-  }
 
   function Task(title, description) {
     if (angular.isObject(title)) {
@@ -49,12 +43,12 @@ angular.module('zentodone').factory('Task', function ($q, hoodie) {
 
     switch (this.data.taskType) {
     case MIT:
-      if (unitsOff(data.dueDate, ONE_DAY) > 0) {
+      if ($filter('unitsOff')(ONE_DAY, data.dueDate) > 0) {
         taskType = ARCHIVE
       }
       break;
     case BR:
-      if (unitsOff(data.dueDate, ONE_WEEK) > 0) {
+      if ($filter('unitsOff')(ONE_WEEK, data.dueDate) > 0) {
         taskType = ARCHIVE
       }
       break;
