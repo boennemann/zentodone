@@ -1,4 +1,4 @@
-angular.module('zentodone').service('sortTasks', function ($filter, Task) {
+angular.module('zentodone').service('sortTasks', function ($filter, Task, hoodie) {
   return function(collection, unit) {
     var sortedTasks = []
     var rescheduledTasks = []
@@ -43,6 +43,8 @@ angular.module('zentodone').service('sortTasks', function ($filter, Task) {
 
         currentTask.overdue += overdue
         unitOffset = 0
+
+        hoodie.store.update('task', currentTask.id, currentTask)
       }
 
       var currentUnit = sortedTasks[unitOffset]
@@ -82,6 +84,8 @@ angular.module('zentodone').service('sortTasks', function ($filter, Task) {
       taskToAssign.dueDate = today.getTime() + (unitIndex * unit)
       unitToFill.offset = unitIndex
       unitToFill.push(taskToAssign)
+
+      hoodie.store.update('task', taskToAssign.id, taskToAssign)
     }
 
     return sortedTasks
