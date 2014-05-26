@@ -32,7 +32,7 @@
   </bp-action>
 </bp-navbar>
 
-<bp-table ng-controller="TaskCtrl">
+<bp-table ng-controller="TaskCtrl" bp-scroll>
   <form>
     <bp-table-header>
       Created {{ task.date | date : 'MMM d' }}
@@ -67,6 +67,7 @@
     </bp-cell>
     <bp-cell class="multiline">
       <textarea
+        rows="16"
         msd-elastic
         placeholder="Task description…"
         ng-model="task.description"
