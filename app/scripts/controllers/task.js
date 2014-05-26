@@ -9,12 +9,12 @@ angular.module('zentodone')
       .then(function(data) {
         goToCorrectType(data)
         $scope.task = data
+        $scope.unit = data.taskType === Task.MIT ? Task.ONE_DAY : Task.ONE_WEEK
         lastType = $scope.task.taskType
         $scope[Task.types[lastType]] = true
       })
 
     tasks.extend($scope)
-
 
     function goToCollection() {
       var navbarCtrl = angular.element('bp-navbar').controller('bpNavbar')

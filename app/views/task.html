@@ -34,11 +34,36 @@
 
 <bp-table ng-controller="TaskCtrl">
   <form>
-    <bp-cell><input
-      type="text"
-      ng-model="task.title"
-      ng-blur="update()"
-      ng-change="update()">
+    <bp-table-header>
+      Created {{ task.date | date : 'MMM d' }}
+      <span
+        ng-if="task.dueDate && !task.done && mit"
+        ng-pluralize
+        count="{{ unit | unitsOff: task.dueDate : task.date }}"
+        when="{
+          0: '– due today',
+          'one': '– due tomorrow',
+          'other': '– due in {} days'
+        }">
+      </span>
+      <span
+        ng-if="task.dueDate && !task.done && br"
+        ng-pluralize
+        count="{{ unit | unitsOff: task.dueDate : task.date }}"
+        when="{
+          0: '– due this week',
+          'one': '– due next week',
+          'other': '– due in {} weeks'
+        }">
+      </span>
+
+    </bp-table-header>
+    <bp-cell>
+      <input
+        type="text"
+        ng-model="task.title"
+        ng-blur="update()"
+        ng-change="update()">
     </bp-cell>
     <bp-cell class="multiline">
       <textarea
