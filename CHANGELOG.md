@@ -1,3 +1,12 @@
+<a name="0.1.1"></a>
+### 0.1.1 (2014-05-26)
+
+
+#### Bug Fixes
+
+* **index:** all lowercase paths ([6a45b475](http://github.com/boennemann/zentodone/commit/6a45b475eecf5cdb073842d931eecad5ba7b802c))
+
+
 <a name="0.1.0-0"></a>
 ### 0.1.0-0 (2014-05-26)
 
