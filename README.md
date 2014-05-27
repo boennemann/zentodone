@@ -5,7 +5,7 @@
 [![devDependency Status](https://david-dm.org/boennemann/zentodone/dev-status.svg)](https://david-dm.org/boennemann/zentodone#info=devDependencies)
 [![Code Climate](http://img.shields.io/codeclimate/github/boennemann/zentodone.svg)](https://codeclimate.com/github/boennemann/zentodone)
 
-A ToDo App based on [Leo Babauta's](http://leobabauta.com/) [Ultimate Simple Productivity System](http://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/).
+A to-do app based on [Leo Babauta's](http://leobabauta.com/) ultimate simple productivity system [Zen To Done](http://zenhabits.net/zen-to-done-ztd-the-ultimate-simple-productivity-system/).
 Built with [Bradypodion.js](http://bradypodion.io), [AngularJS](http://angularjs.org) and [Hoodie](http://hood.ie).
 
 ## Installation
