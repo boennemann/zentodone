@@ -10,12 +10,54 @@ Built with [Bradypodion.js](http://bradypodion.io), [AngularJS](http://angularjs
 
 ## Installation
 
-Install Dependencies
+### Install OS specific dependencies
+
+#### OS X
 
 ```shell
 brew update
+brew install git
 brew install node
 brew install couchdb
+```
+
+#### Linux 
+
+##### General
+
+```shell
+sudo apt-get update
+sudo apt-get install couchdb git
+tar -xvf node-v0.10.10.tar.gz
+cd node-v0.10.10
+./configure
+make && sudo make install
+```
+
+##### Ubuntu
+
+```shell
+sudo apt-get update
+sudo apt-get install couchdb-bin git
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+```
+
+##### Fedora
+
+```shell
+sudo yum install couchdb git nodejs npm
+```
+
+#### Windows
+
+On Windows, install [Node.js](http://nodejs.org/download/), [git](http://git-scm.com/downloads) and [CouchDB](https://couchdb.apache.org/#download) using the installers on each website. 
+
+### Install project specific dependencies
+
+```
+npm install -g grunt-cli hoodie-cli bower
 npm install
 bower install
 ```
