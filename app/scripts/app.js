@@ -1,15 +1,16 @@
 /*!
-* Zen To Done
-* https://git.io/zentodone
-*
-* Copyright 2014 Stephan Bönnemann
-*
-* MultiMedia Project 1 for MultiMedia Technology
-* Fachhochschule Salzburg GmbH
-* http://www.fh-salzburg.ac.at/
-*
-* Released under the MIT license.
-*/
+ * Zen To Done
+ * https://git.io/zentodone
+ *
+ * Copyright 2014 Stephan Bönnemann
+ *
+ * MultiMedia Project 1 for MultiMedia Technology
+ * Fachhochschule Salzburg GmbH
+ * http://www.fh-salzburg.ac.at/
+ *
+ * Released under the MIT license.
+ */
+
 angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.elastic'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
