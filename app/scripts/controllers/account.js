@@ -1,4 +1,4 @@
-angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, $http, hoodie, hoodieAccount) {
+angular.module('zentodone').controller('AccountCtrl', function ($q, $window, $scope, $state, $http, hoodie, hoodieAccount) {
   var data = $scope.data = {}
   $scope.allowSignUp = false
   $scope.account = hoodieAccount
@@ -45,7 +45,14 @@ angular.module('zentodone').controller('AccountCtrl', function ($scope, $state, 
   }
 
   $scope.signOut = function() {
-    return hoodieAccount.signOut()
+    $q.when(hoodieAccount.signOut())
+      .catch(function() {
+        // Sometimes the SignOut is broken
+        // clearing the localStorage and reloading
+        // has the same effect as a logout so:
+        $window.localStorage.clear()
+        $window.location.reload()
+      })
   }
 
   $http.get('package.json')
