@@ -62,6 +62,8 @@ npm install
 bower install
 ```
 
+## Build
+
 Build the App and start Hoodie
 
 ```shell
@@ -76,6 +78,18 @@ Start Hoodie and serve a development version of the App with Livereload.
 ```
 grunt serve
 ```
+
+## Deployment
+
+Releasing a new version is automated with `grunt release`.
+You may add flags to specify the new version.
+
+1. `grunt release` or `grunt release:patch`: 0.0.1 => 0.0.2
+2. `grunt release:minor`: 0.0.2 => 0.1.0
+3. `grunt release:major`: 0.1.0 => 1.0.0
+
+The app will then automatically be deployed to [nodejitsu](https://www.nodejitsu.com/) once the [TravisCI](https://travis-ci.org/) build passes.
+The current version is [![GitHub version](https://badge.fury.io/gh/boennemann%2Fzentodone.svg)](http://badge.fury.io/gh/boennemann%2Fzentodone) and the build is [![Build Status](https://api.travis-ci.org/boennemann/zentodone.svg?branch=master)](https://travis-ci.org/boennemann/zentodone). 
 
 ## Author
 | [![twitter/boennemann](http://gravatar.com/avatar/29e45e7e0bf9561770aae5818f139c80?s=70)](https://twitter.com/boennemann "Follow @boennemann on Twitter") |
