@@ -1,5 +1,7 @@
 angular.module('zentodone').controller('AccountCtrl', function ($q, $window, $scope, $state, $http, hoodie, hoodieAccount) {
   var data = $scope.data = {}
+  var CONNECTION_ERROR = 'HoodieConnectionError'
+
   $scope.allowSignUp = false
   $scope.account = hoodieAccount
 
@@ -8,24 +10,39 @@ angular.module('zentodone').controller('AccountCtrl', function ($q, $window, $sc
   }
 
   $scope.handleForm = function() {
+    $scope.errors = {}
+
+    var down = $q.defer()
+    down.promise.then(function(error) {
+      if (error.name === CONNECTION_ERROR) {
+        $scope.errors.down = true
+      }
+    })
+
+    if (!$window.navigator.onLine) {
+      return $scope.errors.offline = true
+    }
+
     if (data.password2) {
       if (!$scope.hasSamePassword()) { return }
 
       hoodieAccount.signUp(data.email, data.password)
         .then(function() {
           $state.go('inbox')
+        },
+        function(error) {
+          down.resolve(error)
         })
 
       return
     }
-    var signIn = hoodieAccount.signIn(data.email, data.password)
-    signIn.then(function() {
-      $state.go('inbox')
-    })
-
-    signIn.catch(function() {
-      $scope.allowSignUp = true
-    })
+    hoodieAccount.signIn(data.email, data.password)
+      .then(function() {
+        $state.go('inbox')
+      },function(error) {
+        down.resolve(error)
+        $scope.allowSignUp = true
+      })
   }
 
   $scope.hasRepeated = function() {
