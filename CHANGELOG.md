@@ -1,3 +1,14 @@
+<a name="0.1.2"></a>
+### 0.1.2 (2014-05-28)
+
+
+#### Bug Fixes
+
+* **account:**
+  * error handling for offline or downtime ([b4d9dd7f](http://github.com/boennemann/zentodone/commit/b4d9dd7f5642218c60a7a5117591f7c77cd43124))
+  * handle failed signOut closes #10 ([60f00a26](http://github.com/boennemann/zentodone/commit/60f00a263aad0bbe2efe2118adcf724c85c0c15f))
+
+
 <a name="0.1.1"></a>
 ### 0.1.1 (2014-05-26)
 
