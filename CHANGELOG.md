@@ -1,3 +1,12 @@
+<a name="0.1.3"></a>
+### 0.1.3 (2014-05-30)
+
+
+#### Bug Fixes
+
+* **progress:** no unnecessary progress reporting ([41f9d92e](http://github.com/boennemann/zentodone/commit/41f9d92eecb17e0a0ede905e857cd74097f41930))
+
+
 <a name="0.1.2-1"></a>
 ### 0.1.2-1 (2014-05-29)
 
