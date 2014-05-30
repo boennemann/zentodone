@@ -16,8 +16,9 @@ angular.module('zentodone').controller('ProgressCtrl', function ($scope, $q, hoo
         }
       })
       .then(function() {
-        progress.count++
-        hoodie.store.add('progress', progress)
+        if (++progress.count <= 2) {
+          hoodie.store.add('progress', progress)
+        }
       })
   }
 })
