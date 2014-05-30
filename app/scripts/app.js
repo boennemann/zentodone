@@ -15,7 +15,7 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
 
     bpAppProvider.setConfig({
-      platform: localStorage.getItem('platform') || 'ios'
+      platform: 'ios'
     })
 
     cfpLoadingBarProvider.includeSpinner = false;
