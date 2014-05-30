@@ -2,7 +2,7 @@
  * Zen To Done
  * https://git.io/zentodone
  *
- * Copyright 2014 Stephan Bönnemann
+ * Copyright 2014 Stephan Boennemann
  *
  * MultiMedia Project 1 for MultiMedia Technology
  * Fachhochschule Salzburg GmbH
