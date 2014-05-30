@@ -39,17 +39,19 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.
       .state('mit', {
         url: '/mit',
         templateUrl: 'views/mit.html',
-        controller: 'MitCtrl',
+        controller: 'ListCtrl',
         data: {
-          title: 'Most Important Tasks'
+          title: 'Most Important Tasks',
+          taskType: 2
         }
       })
       .state('br', {
         url: '/br',
         templateUrl: 'views/br.html',
-        controller: 'BrCtrl',
+        controller: 'ListCtrl',
         data: {
-          title: 'Big Rocks'
+          title: 'Big Rocks',
+          taskType: 3
         }
       })
       .state('inboxTask', {
