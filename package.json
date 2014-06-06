@@ -16,7 +16,7 @@
     "hoodie-plugin-appconfig": "^0.2.0",
     "hoodie-plugin-email": "^0.1.1",
     "hoodie-plugin-users": "^0.1.0",
-    "hoodie-plugin-angularjs": "^0.0.15"
+    "hoodie-plugin-angularjs": "^0.0.17"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
