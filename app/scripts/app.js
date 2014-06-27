@@ -4,10 +4,6 @@
  *
  * Copyright 2014 Stephan Boennemann
  *
- * MultiMedia Project 1 for MultiMedia Technology
- * Fachhochschule Salzburg GmbH
- * http://www.fh-salzburg.ac.at/
- *
  * Released under the MIT license.
  */
 
