@@ -80,13 +80,6 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.
       })
   })
   .run(function($rootScope, $state, $q, $window, hoodie) {
-    $rootScope.$on('$stateChangeStart', function(event, to) {
-      if (!hoodie.account.hasAccount() && to.name !== 'account') {
-        event.preventDefault()
-        $state.go('account')
-      }
-    })
-
     var defer = $q.defer()
     var cache = $window.applicationCache
     cache.addEventListener('updateready', defer.resolve)
