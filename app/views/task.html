@@ -1,7 +1,4 @@
-<bp-navbar-config bp-navbar-title="" ng-class="{mit: mit, br: br}"></bp-navbar-config>
-
-<!-- ng-hide is a hack https://github.com/excellenteasy/bradypodion/issues/92 -->
-<bp-navbar ng-hide="true" ng-if="!task.done">
+<bp-navbar-config bp-navbar-title="" ng-class="{mit: mit, br: br}">
   <bp-action
     ng-class="{active: mit}"
     ng-click="handle(convertToMit(task))"
@@ -30,7 +27,7 @@
     class="bp-icon delete fa-times">
     Delete
   </bp-action>
-</bp-navbar>
+</bp-navbar-config>
 
 <bp-table ng-controller="TaskCtrl" bp-scroll>
   <form>

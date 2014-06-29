@@ -75,7 +75,7 @@ angular.module('zentodone', ['bp', 'angular-loading-bar', 'hoodie', 'monospaced.
         }
       })
   })
-  .run(function($rootScope, $state, $q, $window, hoodie) {
+  .run(function($rootScope, $state, $q, $window) {
     var defer = $q.defer()
     var cache = $window.applicationCache
     cache.addEventListener('updateready', defer.resolve)
