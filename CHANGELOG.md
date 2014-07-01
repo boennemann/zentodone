@@ -1,3 +1,17 @@
+<a name="0.1.4"></a>
+### 0.1.4 (2014-07-01)
+
+
+#### Bug Fixes
+
+* pull in latest bp fixes ([78bc08a3](http://github.com/boennemann/zentodone/commit/78bc08a323e70f2bf7a03d6f310dc146020d2caf))
+
+
+#### Features
+
+* **account:** allow anonymous use of the app ([b1a1c81b](http://github.com/boennemann/zentodone/commit/b1a1c81bf319841f41999e20f797633d9c2dc621))
+
+
 <a name="0.1.3"></a>
 ### 0.1.3 (2014-05-30)
 
