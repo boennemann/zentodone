@@ -34,7 +34,7 @@ module.exports = (grunt) ->
         tasks: ['less:styles']
 
       gruntfile:
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.{js,coffee}']
 
     connect:
       options:
