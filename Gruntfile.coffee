@@ -8,10 +8,15 @@ module.exports = (grunt) ->
       app: 'app'
       dist: 'www'
 
-    cfg: {}
+    hoodieCfg: {}
 
     hoodie: start: options: callback: (cfg) ->
-      grunt.config.set 'cfg', cfg
+      grunt.config.set 'hoodieCfg', cfg
+      grunt.config.set 'connect.livereload.proxies', [
+        context: '/_api'
+        host: cfg.stack.www.host
+        port: cfg.stack.www.port
+      ]
 
     watch:
       options:
@@ -59,11 +64,7 @@ module.exports = (grunt) ->
             '.tmp'
             '<%= app.app %>'
           ]
-        proxies: [
-          context: '/_api'
-          host: '<%= cfg.stack.www.host %>'
-          port: '<%= cfg.stack.www.port %>'
-        ]
+        # proxies: set by hoodie
 
       dist:
         options:
@@ -202,9 +203,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean'
     'concurrent'
-    'continueOn'
     'useminPrepare'
-    'continueOff'
     'ngtemplates'
     'copy'
     'concat'

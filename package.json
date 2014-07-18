@@ -24,7 +24,6 @@
     "grunt-bump": "0.0.14",
     "grunt-concurrent": "^0.5.0",
     "grunt-connect-proxy": "^0.1.10",
-    "grunt-continue": "^0.0.1",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-connect": "^0.8.0",
