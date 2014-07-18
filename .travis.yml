@@ -16,7 +16,7 @@ deploy:
   skip_cleanup: true
   user: boennemann
   api_key:
-    secure: AmDQfQ89Wwzj/6VIvd2UVLmtZLRChRNcuowPXo+SDgeWGJQGkshLrp2bqz+ooLIZ769dqmPNe6zFZtzN2ujZXqvk4b1DPlqsSmC4dj8ViSu/izp/VJPEcrp8ntqn+cVN1WwtZh5jg54yM+jLNCjY/+wi4rwc++wQNmcCKmAEzDY=
+    secure: WZJu/cg7eZuB2m8k/q0sZ4XGWpC2tuZCwgSIas9Dl+ku9H3BoCNSRbDAEWoQ4M6gvtqlXcUCRsFiIBTIJ2iWYGpaHRkkgRWHtmLBUrsU145hpBaXbUYGhpSiZ+4895xo1IsCHxJgb7Lf3VJA+X5BIdR4uJMUUgaG8tDpuTnb6D8=
   on:
     repo: boennemann/zentodone
     tags: true
