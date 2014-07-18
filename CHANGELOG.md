@@ -1,3 +1,15 @@
+<a name="0.1.5"></a>
+### 0.1.5 (2014-07-18)
+
+
+#### Bug Fixes
+
+* **grunt:** configure proxy in hoodie callback ([15b2ce81](http://github.com/boennemann/zentodone/commit/15b2ce810b6c3b676bb3b8ae2e0a31c5220619c7))
+* **travis:**
+  * nodejitsu forgot our token, so we need to update it ([85bfb87b](http://github.com/boennemann/zentodone/commit/85bfb87b46f00da0d7c119740a68af4e39ad2c59))
+  * travis changed their deploy behavior ([b0a49390](http://github.com/boennemann/zentodone/commit/b0a49390df7715146a08c320def357d45b6f75f2))
+
+
 <a name="0.1.4"></a>
 ### 0.1.4 (2014-07-01)
 
