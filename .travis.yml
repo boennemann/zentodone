@@ -20,3 +20,4 @@ deploy:
   on:
     repo: boennemann/zentodone
     tags: true
+    all_branches: true
