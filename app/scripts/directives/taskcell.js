@@ -97,9 +97,8 @@ angular.module('zentodone')
                 .css('transform', '')
               return
             }
+            scope.$apply(action)
             $animate.leave(element, function() {
-              scope.$apply(action)
-
               if (angular.element.contains(document.documentElement, $text[0])) {
                 $text
                   .removeClass(move)
