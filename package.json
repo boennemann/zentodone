@@ -12,35 +12,35 @@
   },
   "type": "app",
   "dependencies": {
-    "hoodie-plugin-angularjs": "^0.0.17",
-    "hoodie-plugin-appconfig": "^1.0.0",
+    "hoodie-plugin-angularjs": "^0.1.1",
+    "hoodie-plugin-appconfig": "^2.0.1",
     "hoodie-plugin-email": "^1.0.0",
-    "hoodie-plugin-users": "^1.0.0",
-    "hoodie-server": "^1.1.1"
+    "hoodie-plugin-users": "^2.1.2",
+    "hoodie-server": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-angular-templates": "^0.5.4",
-    "grunt-bump": "0.0.14",
-    "grunt-concurrent": "^0.5.0",
+    "grunt-bump": "^0.0.16",
+    "grunt-concurrent": "^1.0.0",
     "grunt-connect-proxy": "^0.1.10",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^0.11.0",
-    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.0",
     "grunt-conventional-changelog": "^1.1.0",
     "grunt-hoodie": "^0.5.1",
     "grunt-manifest": "^0.4.0",
-    "grunt-ngmin": "0.0.3",
+    "grunt-ngmin": "^0.0.3",
     "grunt-rev": "^0.1.0",
     "grunt-usemin": "^2.1.1",
     "load-grunt-tasks": "^0.6.0",
-    "time-grunt": "^0.4.0"
+    "time-grunt": "^1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
