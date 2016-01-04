@@ -12,6 +12,7 @@
   },
   "type": "app",
   "dependencies": {
+    "grunt-connect-proxy": "^0.2.0",
     "hoodie-plugin-angularjs": "^0.1.1",
     "hoodie-plugin-appconfig": "^2.0.1",
     "hoodie-plugin-email": "^1.0.0",
